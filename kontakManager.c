@@ -191,7 +191,7 @@ void printDataDetail(Node **head, Node **tail){
 }
 
 void aboutMe(Contact me) {
-    if (me == 0) {
+    if (me.nama == 0) {
         strcpy(me.nama, "Rivo Juicer Wowor");
         strcpy(me.domisili, "Kabupaten Berau");
         strcpy(me.hubungan, "Diri sendiri");
