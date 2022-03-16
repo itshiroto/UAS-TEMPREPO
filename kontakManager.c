@@ -40,7 +40,8 @@ int mainMenu() {
   printf("1. Data kontak\n"
          "2. Tambah kontak\n"
          "3. Tampilkan Kontak Penting\n"
-         "4. About me\n");
+         "4. About me\n"
+         "5. Exit\n");
 
   int pilihan;
   printf("Pilihan: ");
