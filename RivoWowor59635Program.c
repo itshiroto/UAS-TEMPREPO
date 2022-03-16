@@ -192,14 +192,14 @@ void printDataSummary(Node **head) {
   printDataTabel(head);
   int choice;
   printf("1. Tambah kontak ke daftar kontak penting\n"
-         "2. Kembali ke menu utama\n"
+         "0. Kembali ke menu utama\n"
          "Pilihan: ");
   scanf("%i%*c", &choice);
   switch (choice) {
   case 1:
     addContactToPenting();
     break;
-  case 2:
+  case 0:
     break;
   default:
     printf("Pilihan tidak ditemukan\n");
