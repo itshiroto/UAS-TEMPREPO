@@ -1,5 +1,5 @@
-Michael Immanuel,Tegal,Calon Dosen,081279846585,michael.immanuel@student.umn.ac.id,Universitas Multimedia Nusantara, L
-Nehemia Gueldi,Tangerang,Asisten Dosen,085967845678,nehemia.gueldi@student.umn.ac.id,Universitas Multimedia Nusantara, L
-Steven Vincent Hendrawan,Tangerang,Asisten Dosen,081279846585,steven.vincent@student.umn.ac.id,Universitas Multimedia Nusantara, L
-Gerald Imanuel Wijaya,Cirebon,Teman,084978845678,gerald.imanuel@student.umn.ac.id,Universitas Multimedia Nusantara, L
-Fadhil Dzaky Muhammad,Tangerang,Teman,087984684115,fadhil.muhammad@student.umn.ac.id,Universitas Multimedia Nusantara, L
+Michael Immanuel,Tegal,Calon Dosen,081279846585,michael.immanuel@student.umn.ac.id,Universitas Multimedia Nusantara,L
+Nehemia Gueldi,Tangerang,Asisten Dosen,085967845678,nehemia.gueldi@student.umn.ac.id,Universitas Multimedia Nusantara,L
+Steven Vincent Hendrawan,Tangerang,Asisten Dosen,081279846585,steven.vincent@student.umn.ac.id,Universitas Multimedia Nusantara,L
+Gerald Imanuel Wijaya,Cirebon,Teman,084978845678,gerald.imanuel@student.umn.ac.id,Universitas Multimedia Nusantara,L
+Fadhil Dzaky Muhammad,Tangerang,Teman,087984684115,fadhil.muhammad@student.umn.ac.id,Universitas Multimedia Nusantara,L
