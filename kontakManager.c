@@ -115,7 +115,7 @@ void printData(Node **head)
         printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n",
                "Nama", "Domisili", "Hubungan", "Nomor", "Email", "Workplace",
                "Jenis kelamin");
-        printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s | %-20c |\n",
+        printf("| %-20s | %-10s | %-8s | %-15s | %-15s | %-20s | %c |\n",
                data.nama, data.domisili, data.hubungan, data.nomor, data.email,
                data.workplace, data.jenisKelamin);
 
