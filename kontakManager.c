@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef enum yesNo {
+    y = 0,
+    n = 1,
+    Y = 0,
+    N = 1
+} yesNo;
 typedef struct Contact {
   char nama[50];
   char domisili[50];
@@ -70,6 +76,8 @@ Contact inputData() {
   scanf("%[^\n]%*c", data.workplace);
   printf("Jenis kelamin: ");
   scanf("%c", &data.jenisKelamin);
+  printf("Apakah anda yakin dengan data yang dimasukkan? (Y/N): ");
+
   return data;
 }
 
