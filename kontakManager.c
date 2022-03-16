@@ -75,7 +75,14 @@ Contact inputData() {
   printf("Workplace: ");
   scanf("%[^\n]%*c", data.workplace);
   printf("Jenis kelamin: ");
-  scanf("%c%*c", &data.jenisKelamin);
+  while(true){
+    scanf("%c%*c", &data.jenisKelamin);
+    if(data.jenisKelamin == 'L' || data.jenisKelamin == 'P' 
+    || data.jenisKelamin == 'l' || data.jenisKelamin == 'p'){
+      break;
+    }
+    printf("Jenis kelamin salah!\n");
+  }
   printf("Apakah anda yakin dengan data yang dimasukkan? (Y/N): ");
   char ask;
   yesNo confirm;
