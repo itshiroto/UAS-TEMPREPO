@@ -111,18 +111,19 @@ void printData(Node **head)
     printf("-------------------------------------------------------------------"
            "-------------------------------------------------------------------"
            "----------------------------------------------------------\n");
-    printf("| %-30s | %-15s | %-15s | %-15s | %-40s | %-40s | %-15s |\n",
-           "Nama", "Domisili", "Hubungan", "Nomor", "Email", "Workplace",
+    printf("| %-3s | %-30s | %-15s | %-15s | %-15s | %-40s | %-40s | %-15s |\n",
+           "No", "Nama", "Domisili", "Hubungan", "Nomor", "Email", "Workplace",
            "Jenis kelamin");
     printf("-------------------------------------------------------------------"
            "-------------------------------------------------------------------"
            "----------------------------------------------------------\n");
+           int count = 0;
     do
     {
         // print data using tables
         Contact data = current->data;
-        printf("| %-30s | %-15s | %-15s | %-15s | %-40s | %-40s | %-15c |\n",
-               data.nama, data.domisili, data.hubungan, data.nomor, data.email,
+        printf("| %-3s | %-30s | %-15s | %-15s | %-15s | %-40s | %-40s | %-15c |\n",
+               count++, data.nama, data.domisili, data.hubungan, data.nomor, data.email,
                data.workplace, data.jenisKelamin);
         current = current->next;
     } while (current != *head);
