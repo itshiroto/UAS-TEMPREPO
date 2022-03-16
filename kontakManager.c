@@ -80,7 +80,6 @@ Contact inputData() {
   yesNo confirm;
   scanf("%c", &confirm);
 
-
   return confirm ? data : inputData();
 }
 
