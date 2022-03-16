@@ -61,19 +61,19 @@ void appendNode(Contact data, Node **head, Node **tail)
 Contact inputData() {
     Contact data;
     printf("Nama: ");
-    scanf("%[^\n]", data.nama);
+    scanf("%[^\n]%*c", data.nama);
     printf("Domisili: ");
-    scanf("%[^\n]", data.domisili);
+    scanf("%[^\n]%*c", data.domisili);
     printf("Hubungan: ");
-    scanf("%[^\n]", data.hubungan);
+    scanf("%[^\n]%*c", data.hubungan);
     printf("Nomor: ");
-    scanf("%[^\n]", data.nomor);
+    scanf("%[^\n]%*c", data.nomor);
     printf("Email: ");
-    scanf("%[^\n]", data.email);
+    scanf("%[^\n]%*c", data.email);
     printf("Workplace: ");
-    scanf("%[^\n]", data.workplace);
+    scanf("%[^\n]%*c", data.workplace);
     printf("Jenis kelamin: ");
-    scanf(" %c", &data.jenisKelamin);
+    scanf("%c", &data.jenisKelamin);
     return data;
 }
 
