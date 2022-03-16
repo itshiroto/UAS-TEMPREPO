@@ -137,7 +137,7 @@ void writeFile() {
 void addContactToPenting() {
   int menu;
   printf("Kontak nomor berapa yang ingin ditambahkan?: ");
-  scanf("%d", &menu)
+  scanf("%d", &menu);
   if (menu > MAIN_COUNT) {
     printf("Kontak tidak ditemukan\n");
     return;
