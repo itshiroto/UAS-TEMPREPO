@@ -108,9 +108,12 @@ void printData(Node **head)
         printf("\nData kontak kosong\n");
         return;
     }
-        printf("| %-30s | %-15s | %-15s | %-15s | %-40s | %-40s | %-15s |\n",
-               "Nama", "Domisili", "Hubungan", "Nomor", "Email", "Workplace",
-               "Jenis kelamin");
+    printf("| %-30s | %-15s | %-15s | %-15s | %-40s | %-40s | %-15s |\n",
+           "Nama", "Domisili", "Hubungan", "Nomor", "Email", "Workplace",
+           "Jenis kelamin");
+    printf("-------------------------------------------------------------------"
+           "-------------------------------------------------------------------"
+           "----------------------------------------------------------\n");
     do
     {
         // print data using tables
