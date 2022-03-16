@@ -98,8 +98,6 @@ Contact inputData() {
     confirm = y;
   else
     confirm = n;
-  
-
   return confirm ? data : inputData();
 }
 
@@ -142,7 +140,7 @@ void addContactToPenting() {
     printf("Kontak tidak ditemukan\n");
     return;
   }
-  for (int i = 1; i <= MAIN_COUNT; i++) {
+  for (int i = 0; i < MAIN_COUNT; i++) {
     Node *curr = headMain;
     if (i == menu) {
       Contact data = curr->data;
