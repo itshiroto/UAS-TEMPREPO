@@ -20,7 +20,7 @@ typedef struct Node
     struct Node *next, *prev;
 } Node;
 
-Node *head = NULL, *tail = NULL;
+Node *headMain = NULL, *tailMain = NULL;
 Node *headPenting = NULL, *tailPenting = NULL;
 
 int mainMenu()
@@ -87,7 +87,6 @@ void readFile() {
         return;
     }
     Contact data;
-    // while file not end, read data using delimiter of comma
     while (fscanf(file, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%c", data.nama, data.domisili, data.hubungan, data.nomor, data.email, data.workplace, &data.jenisKelamin) != EOF) {
         appendNode(data, &head, &tail);
     }
@@ -119,15 +118,16 @@ void printData(Node **head)
 int main()
 {
     bool lanjut = true;
+    readFile();
     while (lanjut)
     {
         switch (mainMenu())
         {
         case 1:
-            printData(&head);
+            printData(&headMain);
             break;
         case 2:
-            appendNode(inputData(), &head, &tail);
+            appendNode(inputData(), &headMain, &tailMain);
             break;
         case 3:
             break;
