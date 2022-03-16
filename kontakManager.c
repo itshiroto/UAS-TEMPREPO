@@ -4,10 +4,10 @@
 #include <string.h>
 
 typedef enum yesNo {
-    y = 0,
-    n = 1,
-    Y = 0,
-    N = 1
+    y = 1,
+    n = 0,
+    Y = 1,
+    N = 0
 } yesNo;
 typedef struct Contact {
   char nama[50];
