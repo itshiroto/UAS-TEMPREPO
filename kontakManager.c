@@ -87,7 +87,10 @@ void readFile() {
         return;
     }
     Contact data;
-    while (fscanf(file, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%c%*c", data.nama, data.domisili, data.hubungan, data.nomor, data.email, data.workplace, &data.jenisKelamin) != EOF) {
+    while (
+        fscanf(file, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%c%*c",
+        data.nama, data.domisili, data.hubungan, data.nomor,
+        data.email, data.workplace, &data.jenisKelamin) != EOF) {
         appendNode(data, &headMain, &tailMain);
     }
     fclose(file);
