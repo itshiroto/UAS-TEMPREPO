@@ -114,6 +114,22 @@ void readFile() {
   fclose(file);
 }
 
+void writeFile() {
+    FILE *file = fopen("RivoWowor59635DaftarTeman.txt", "w");
+    if (file == NULL) {
+        printf("File tidak ditemukan\n");
+        return;
+    }
+    Node *curr = headMain;
+    do {
+        fprintf(file, "%s,%s,%s,%s,%s,%s,%c\n", curr->data.nama,
+                curr->data.domisili, curr->data.hubungan, curr->data.nomor,
+                curr->data.email, curr->data.workplace, curr->data.jenisKelamin);
+        curr = curr->next;
+    } while (curr != headMain);
+    fclose(file);
+}
+
 void printDataSummary(Node **head) {
   Node *current = *head;
   if (*head == NULL) {
