@@ -43,10 +43,10 @@ void appendNode(Contact data, Node **head, Node **tail)
 {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = data;
-    newNode->next = newNode->prev = NULL;
     if (*head == NULL)
     {
         *head = *tail = newNode;
+        (*head)->next = (*tail)->prev = newNode;
     }
     else
     {
