@@ -74,8 +74,8 @@ Contact inputData() {
   scanf("%[^\n]%*c", data.email);
   printf("Workplace: ");
   scanf("%[^\n]%*c", data.workplace);
-  printf("Jenis kelamin: ");
   while(true){
+    printf("Jenis kelamin: ");
     scanf("%c%*c", &data.jenisKelamin);
     if(data.jenisKelamin == 'L' || data.jenisKelamin == 'P' 
     || data.jenisKelamin == 'l' || data.jenisKelamin == 'p'){
