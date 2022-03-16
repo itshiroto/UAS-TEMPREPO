@@ -215,7 +215,7 @@ void aboutMe(Contact me) {
     printf("Halo! Nama saya %s dan saya berdomisili di %s serta berkuliah di %s. ", me.nama,
            me.domisili, me.workplace);
     printf("Saya sangat suka dengan yang namanya programming\n"
-            "dan saya ingin menjadi seorang"
+            "dan saya ingin menjadi seorang "
            "programmer yang baik dengan berkuliah di kampus UMN.\n");
     printf("Saya juga ingin menambah koneksi dengan dunia IT di Indonesia,"
            " baik di kampus, maupun di dunia kerja nantinya\n");
