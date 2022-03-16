@@ -154,7 +154,7 @@ void addContactToPenting() {
   printf("Data invalid!");
 }
 
-void printDataSummary(Node **head) {
+void printDataTabel(Node **head) {
   Node *current = *head;
   if (*head == NULL) {
     printf("\nData kontak kosong\n");
@@ -181,6 +181,10 @@ void printDataSummary(Node **head) {
   printf("-------------------------------------------------------------------"
          "-------------------------------------------------------------------"
          "----------------------------------------------------------------\n");
+}
+
+void printDataSummary(Node **head) {
+  printDataTabel(head);
   int choice;
   printf("1. Tambah kontak ke daftar kontak penting\n"
          "2. Kembali ke menu utama\n");
