@@ -78,7 +78,7 @@ Contact inputData() {
   scanf("%c", &data.jenisKelamin);
   printf("Apakah anda yakin dengan data yang dimasukkan? (Y/N): ");
   yesNo confirm;
-  scanf("%c", &confirm);
+  scanf("%i", &confirm);
 
   return confirm ? data : inputData();
 }
