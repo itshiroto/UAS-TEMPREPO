@@ -155,6 +155,8 @@ void printDataDetail(Node **head, Node **tail){
         if (current == *tail) 
             count = MAIN_COUNT;
         Contact data = current->data;
+        printf("\n");
+        printf("=======================================\n")
         printf("%-9s : %i/%i \n", "No", count, MAIN_COUNT); // TODO
         printf("%-9s : %s\n", "Nama", data.nama);
         printf("%-9s : %s\n", "Domisili", data.domisili);
@@ -163,6 +165,7 @@ void printDataDetail(Node **head, Node **tail){
         printf("%-9s : %s\n", "Email", data.email);
         printf("%-9s : %s\n", "Workplace", data.workplace);
         printf("%-9s : %c\n", "Jenis kelamin", data.jenisKelamin);
+        printf("=======================================\n")
         printf("\n");
 
         printf(
