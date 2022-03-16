@@ -216,7 +216,7 @@ void aboutMe(Contact me) {
     printf("Saya sangat suka dengan yang namanya programming, dan saya ingin menjadi seorang "
            "programmer yang baik dengan berkuliah di kampus UMN.\n");
     printf("Saya juga ingin menambah koneksi dengan dunia IT di Indonesia,"
-           " baik di kampus, maupun di dunia kerja nantinnya");
+           " baik di kampus, maupun di dunia kerja nantinya\n");
     printf("Saya juga sangat mencintai musik. Oleh karena itu sejak kecil\n"
            "saya mulai belajar keyboard. Dan hingga sekarang saya masih bermain keyboard\n"
            "dan mengembangkan skill saya di alat musik lainnya seperti drum, gitar, dan bass.\n");
