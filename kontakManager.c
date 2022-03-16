@@ -161,8 +161,12 @@ void menuTampilan() {
     printf("\n");
     int menu;
     while(keepGoing) {
-        printf("Menu: \n"
-               "1. Tampilan Ringkas\n"
+        printf(
+            "============================\n"
+            "|        Data kontak       |\n"
+            "============================\n"
+            )
+        printf("1. Tampilan Semua\n"
                "2. Tampilan Detail\n"
                "3. Exit\n"
                "Pilihan : ");
