@@ -117,8 +117,6 @@ void printDataSummary(Node **head) {
 
 void printDataDetail(Node **head){
     Node *current = *head;
-    // print data using detailed view
-    // Where user can see the data one by one
     printf("\n");
     bool keepGoing = true;
     int menu;
@@ -158,13 +156,41 @@ void printDataDetail(Node **head){
     }
 }
 
+void menuTampilan() {
+    bool keepGoing = true;
+    printf("\n");
+    int menu;
+    while(keepGoing) {
+        printf("Menu: \n"
+               "1. Tampilan Ringkas\n"
+               "2. Tampilan Detail\n"
+               "3. Exit\n"
+               "Pilihan : ");
+        scanf("%d%*c", &menu);
+        switch (menu) {
+        case 1:
+            printDataSummary(&headMain);
+            break;
+        case 2:
+            printDataDetail(&headMain);
+            break;
+        case 3:
+            keepGoing = false;
+            break;
+        default:
+            printf("Pilihan tidak valid\n");
+            break;
+        }
+    }
+}
+
 int main() {
   bool lanjut = true;
   readFile();
   while (lanjut) {
     switch (mainMenu()) {
     case 1:
-    //   printDataSummary(&headMain);
+      printDataSummary(&headMain);
       printDataDetail(&headMain);
       break;
     case 2:
