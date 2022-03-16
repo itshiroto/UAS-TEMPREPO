@@ -115,7 +115,7 @@ void printData(Node **head)
     {
         // print data using tables
         Contact data = current->data;
-        printf("| %-30s | %-15s | %-15s | %-15s | %-15s | %-20s | %c |\n",
+        printf("| %-30s | %-15s | %-15s | %-15s | %-20s | %-25s | %c |\n",
                data.nama, data.domisili, data.hubungan, data.nomor, data.email,
                data.workplace, data.jenisKelamin);
 
