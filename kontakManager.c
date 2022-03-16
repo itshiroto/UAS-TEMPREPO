@@ -77,8 +77,11 @@ Contact inputData() {
   printf("Jenis kelamin: ");
   scanf("%c", &data.jenisKelamin);
   printf("Apakah anda yakin dengan data yang dimasukkan? (Y/N): ");
+  yesNo confirm;
+  scanf("%c", &confirm);
 
-  return data;
+
+  return confirm ? data : inputData();
 }
 
 void readFile() {
