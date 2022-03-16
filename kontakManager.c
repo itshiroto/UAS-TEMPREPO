@@ -343,6 +343,7 @@ int main() {
       writeFile();
       break;
     case 3:
+      printDataTabel(&headPenting);
       break;
     case 4:
       aboutMe(myself);
