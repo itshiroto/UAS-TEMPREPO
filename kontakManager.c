@@ -77,8 +77,10 @@ Contact inputData() {
   printf("Jenis kelamin: ");
   scanf("%c", &data.jenisKelamin);
   printf("Apakah anda yakin dengan data yang dimasukkan? (Y/N): ");
+  char ask;
   yesNo confirm;
-  scanf("%i", &confirm);
+  scanf("%i", &ask);
+  confirm = confirm == 'Y' || confirm == 'y' ? y : n;
 
   return confirm ? data : inputData();
 }
