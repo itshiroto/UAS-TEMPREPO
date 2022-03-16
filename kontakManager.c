@@ -75,7 +75,7 @@ Contact inputData() {
   printf("Workplace: ");
   scanf("%[^\n]%*c", data.workplace);
   printf("Jenis kelamin: ");
-  scanf("%c", &data.jenisKelamin);
+  scanf("%c%*c", &data.jenisKelamin);
   printf("Apakah anda yakin dengan data yang dimasukkan? (Y/N): ");
   char ask;
   yesNo confirm;
