@@ -28,7 +28,7 @@ Node *headMain = NULL, *tailMain = NULL;
 Node *headPenting = NULL, *tailPenting = NULL;
 
 int MAIN_COUNT = 0;
-Contact myself = NULL;
+Contact myself = {0};
 
 int mainMenu() {
   printf("========================================================\n"
@@ -191,7 +191,7 @@ void printDataDetail(Node **head, Node **tail){
 }
 
 void aboutMe(Contact me) {
-    if (me == NULL) {
+    if (me == 0) {
         strcpy(me.nama, "Rivo Juicer Wowor");
         strcpy(me.domisili, "Kabupaten Berau");
         strcpy(me.hubungan, "Diri sendiri");
