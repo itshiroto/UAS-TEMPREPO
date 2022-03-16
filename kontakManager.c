@@ -370,6 +370,7 @@ int main() {
       writeFile();
       break;
     case 3:
+      printDataPenting(&headPenting);
       break;
     case 4:
       aboutMe(myself);
