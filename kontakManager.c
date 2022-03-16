@@ -4,6 +4,7 @@
 #include <string.h>
 
 typedef enum yesNo {
+    writeFile();
     y = 1,
     n = 0,
     Y = 1,
@@ -32,6 +33,7 @@ Contact myself = {0};
 bool isMyselfDone = false;
 
 int mainMenu() {
+  printf("\n");
   printf("========================================================\n"
          "|                     Kontak Manager                   |\n"
          "|                         v0.1a                        |\n"
