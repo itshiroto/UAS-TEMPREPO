@@ -121,7 +121,7 @@ void printDataDetail(Node **head, Node **tail){
     Node *current = *head;
     printf("\n");
     bool keepGoing = true;
-    int menu;
+    int menu, count = 0;
     while(keepGoing) {
         if(current == *head)
             count = 1;
