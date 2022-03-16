@@ -67,7 +67,7 @@ void appendNode(Contact data, Node **head, Node **tail) {
 Contact inputData() {
   Contact data;
   printf("========================================================\n");
-  printf("|                     Tambah Kontak                     |\n");
+  printf("|                     Tambah Kontak                    |\n");
   printf("========================================================\n");
   printf("%-18s : ", "Nama");
   scanf("%[^\n]%*c", data.nama);
