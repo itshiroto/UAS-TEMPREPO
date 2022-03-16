@@ -80,7 +80,11 @@ Contact inputData() {
   char ask;
   yesNo confirm;
   scanf("%c", &ask);
-  confirm = confirm == 'Y' || confirm == 'y' ? y : n;
+  if(ask == 'Y' || ask == 'y') 
+    confirm = y;
+  else
+    confirm = n;
+  
 
   return confirm ? data : inputData();
 }
