@@ -36,7 +36,7 @@ int mainMenu() {
          "2. Tambah kontak\n"
          "3. Tampilkan Kontak Penting\n"
          "4. About me\n"
-         "5. Exit\n");
+         "0. Exit\n");
 
   int pilihan;
   printf("Pilihan: ");
@@ -235,7 +235,7 @@ void printDataDetail(Node **head, Node **tail) {
     printf("Menu: \n"
            "1. Next\n"
            "2. Previous\n"
-           "3. Exit\n"
+           "0. Exit\n"
            "Pilihan : ");
     scanf("%d%*c", &menu);
     switch (menu) {
@@ -247,7 +247,7 @@ void printDataDetail(Node **head, Node **tail) {
       current = current->prev;
       count--;
       break;
-    case 3:
+    case 0:
       keepGoing = false;
       break;
     default:
@@ -320,7 +320,7 @@ void menuTampilan() {
            "============================\n");
     printf("1. Tampilan Semua\n"
            "2. Tampilan Detail\n"
-           "3. Exit\n"
+           "0. Exit\n"
            "Pilihan : ");
     scanf("%d%*c", &menu);
     switch (menu) {
@@ -330,7 +330,7 @@ void menuTampilan() {
     case 2:
       printDataDetail(&headMain, &tailMain);
       break;
-    case 3:
+    case 0:
       keepGoing = false;
       break;
     default:
@@ -388,7 +388,7 @@ int main() {
     case 4:
       aboutMe(myself);
       break;
-    case 5:
+    case 0:
       lanjut = false;
       break;
     default:
