@@ -80,7 +80,7 @@ Contact inputData() {
   printf("%-15s : ", "Workplace/Kampus");
   scanf("%[^\n]%*c", data.workplace);
   while(true){
-    printf("%-15s : ", "Domisili");
+    printf("%-15s : ", "Jenis kelamin");
     printf("Jenis kelamin: ");
     scanf("%c%*c", &data.jenisKelamin);
     if(data.jenisKelamin == 'L' || data.jenisKelamin == 'P' 
