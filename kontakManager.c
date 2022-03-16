@@ -14,7 +14,8 @@ typedef struct Contact
     char jenisKelamin;
 } Contact;
 
-typedef struct Node {
+typedef struct Node
+{
     Contact data;
     struct Node *next, *prev;
 } Node;
@@ -31,20 +32,24 @@ int mainMenu()
         "2. Tambah kontak\n"
         "3. Hapus kontak\n"
         "4. About me\n");
-    
+
     int pilihan;
     printf("\nPilihan: ");
     scanf("%d", &pilihan);
     return pilihan;
 }
 
-void appendNode(Contact data, Node **head, Node **tail) {
-    Node *newNode = (Node *) malloc(sizeof(Node));
+void appendNode(Contact data, Node **head, Node **tail)
+{
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = newNode->prev = NULL;
-    if(*head == NULL) {
+    if (*head == NULL)
+    {
         *head = *tail = newNode;
-    } else {
+    }
+    else
+    {
         newNode->prev = *tail;
         newNode->next = *head;
         (*tail)->next = newNode;
@@ -53,13 +58,16 @@ void appendNode(Contact data, Node **head, Node **tail) {
     }
 }
 
-void printData(Node **head) {
+void printData(Node **head)
+{
     Node *current = *head;
-    if (*head == NULL) {
+    if (*head == NULL)
+    {
         printf("\nData kontak kosong\n");
         return;
     }
-    do {
+    do
+    {
         printf("Nama: %s\n", current->data.nama);
         printf("Domisili: %s\n", current->data.domisili);
         printf("Hubungan: %s\n", current->data.hubungan);
@@ -69,26 +77,27 @@ void printData(Node **head) {
         printf("Jenis Kelamin: %c\n", current->data.jenisKelamin);
         printf("========================================================\n");
         current = current->next;
-    } while(current != *head);
+    } while (current != *head);
 }
 
-int main() {
+int main()
+{
     Node *head = NULL, *tail = NULL;
-    int pilihan;
     bool lanjut;
-    while(lanjut){
-        pilihan = mainMenu();
-        switch(pilihan) {
-            case 1:
-                printData(&head);
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            default:
-                printf("\nPilihan tidak ditemukan\n");
-                break;
+    while (lanjut)
+    {
+        switch (mainMenu())
+        {
+        case 1:
+            printData(&head);
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        default:
+            printf("\nPilihan tidak ditemukan\n");
+            break;
         }
-    } 
+    }
 }
