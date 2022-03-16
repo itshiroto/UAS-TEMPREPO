@@ -20,6 +20,9 @@ typedef struct Node
     struct Node *next, *prev;
 } Node;
 
+Node *head = NULL, *tail = NULL;
+Node *headPenting = NULL, *tailPenting = NULL;
+
 int mainMenu()
 {
     printf(
@@ -77,6 +80,20 @@ Contact inputData() {
     return data;
 }
 
+void readFile() {
+    FILE *file = fopen("RivoWowor59635DaftarTeman.txt", "r");
+    if (file == NULL) {
+        printf("File tidak ditemukan\n");
+        return;
+    }
+    Contact data;
+    // while file not end, read data using delimiter of comma
+    while (fscanf(file, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%c", data.nama, data.domisili, data.hubungan, data.nomor, data.email, data.workplace, &data.jenisKelamin) != EOF) {
+        appendNode(data, &head, &tail);
+    }
+    fclose(file);
+}
+
 void printData(Node **head)
 {
     Node *current = *head;
@@ -101,7 +118,6 @@ void printData(Node **head)
 
 int main()
 {
-    Node *head = NULL, *tail = NULL;
     bool lanjut = true;
     while (lanjut)
     {
