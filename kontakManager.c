@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 typedef struct Contact
 {
@@ -69,4 +70,25 @@ void printData(Node **head) {
         printf("========================================================\n");
         current = current->next;
     } while(current != *head);
+}
+
+int main() {
+    Node *head = NULL, *tail = NULL;
+    int pilihan;
+    bool lanjut;
+    while(lanjut){
+        pilihan = mainMenu();
+        switch(pilihan) {
+            case 1:
+                printData(&head);
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                printf("\nPilihan tidak ditemukan\n");
+                break;
+        }
+    } 
 }
