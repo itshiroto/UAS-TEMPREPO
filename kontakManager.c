@@ -58,6 +58,25 @@ void appendNode(Contact data, Node **head, Node **tail)
     }
 }
 
+Contact inputData() {
+    Contact data;
+    printf("Nama: ");
+    scanf("%s", data.nama);
+    printf("Domisili: ");
+    scanf("%s", data.domisili);
+    printf("Hubungan: ");
+    scanf("%s", data.hubungan);
+    printf("Nomor: ");
+    scanf("%s", data.nomor);
+    printf("Email: ");
+    scanf("%s", data.email);
+    printf("Workplace: ");
+    scanf("%s", data.workplace);
+    printf("Jenis kelamin: ");
+    scanf(" %c", &data.jenisKelamin);
+    return data;
+}
+
 void printData(Node **head)
 {
     Node *current = *head;
@@ -92,6 +111,7 @@ int main()
             printData(&head);
             break;
         case 2:
+            appendNode(inputData(), &head, &tail);
             break;
         case 3:
             break;
