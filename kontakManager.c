@@ -19,6 +19,7 @@ typedef struct Node {
 } Node;
 
 Node *headMain = NULL, *tailMain = NULL;
+int MAIN_COUNT = 0;
 Node *headPenting = NULL, *tailPenting = NULL;
 
 int mainMenu() {
@@ -50,6 +51,7 @@ void appendNode(Contact data, Node **head, Node **tail) {
     (*head)->prev = newNode;
     *tail = newNode;
   }
+  MAIN_COUNT++;
 }
 
 Contact inputData() {
@@ -115,14 +117,18 @@ void printDataSummary(Node **head) {
          "----------------------------------------------------------------\n");
 }
 
-void printDataDetail(Node **head){
+void printDataDetail(Node **head, Node **tail){
     Node *current = *head;
     printf("\n");
     bool keepGoing = true;
     int menu;
     while(keepGoing) {
+        if(current == *head)
+            count = 1;
+        if (current == *tail) 
+            count = MAIN_COUNT;
         Contact data = current->data;
-        printf("%-9s : %i/%i \n", "No", 0, 0); // TODO
+        printf("%-9s : %i/%i \n", "No", 0, MAIN_COUNT); // TODO
         printf("%-9s : %s\n", "Nama", data.nama);
         printf("%-9s : %s\n", "Domisili", data.domisili);
         printf("%-9s : %s\n", "Hubungan", data.hubungan);
@@ -176,7 +182,7 @@ void menuTampilan() {
             printDataSummary(&headMain);
             break;
         case 2:
-            printDataDetail(&headMain);
+            printDataDetail(&headMain, &tailMain);
             break;
         case 3:
             keepGoing = false;
