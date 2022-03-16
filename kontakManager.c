@@ -29,7 +29,7 @@ int mainMenu() {
          "========================================================\n");
   printf("1. Data kontak\n"
          "2. Tambah kontak\n"
-         "3. Hapus kontak\n"
+         "3. Tampilkan Kontak Penting\n"
          "4. About me\n");
 
   int pilihan;
