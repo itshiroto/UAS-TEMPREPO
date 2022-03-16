@@ -35,7 +35,7 @@ int mainMenu()
 
     int pilihan;
     printf("\nPilihan: ");
-    scanf("%d", &pilihan);
+    scanf("%d%*c", &pilihan);
     return pilihan;
 }
 
