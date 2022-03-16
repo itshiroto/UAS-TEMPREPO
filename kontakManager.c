@@ -86,7 +86,7 @@ void readFile() {
   fclose(file);
 }
 
-void printData(Node **head) {
+void printDataSummary(Node **head) {
   Node *current = *head;
   if (*head == NULL) {
     printf("\nData kontak kosong\n");
@@ -115,13 +115,56 @@ void printData(Node **head) {
          "----------------------------------------------------------------\n");
 }
 
+void printDataDetail(Node **head){
+    Node *current = *head;
+    // print data using detailed view
+    // Where user can see the data one by one
+    printf("\n");
+    bool keepGoing = true;
+    int menu;
+    while(keepGoing) {
+        Contact data = current->data;
+        printf("%-9s : %i/%i \n", "No", 0, 0); // TODO
+        printf("%-9s : %s\n", "Nama", data.nama);
+        printf("%-9s : %s\n", "Domisili", data.domisili);
+        printf("%-9s : %s\n", "Hubungan", data.hubungan);
+        printf("%-9s : %s\n", "Nomor", data.nomor);
+        printf("%-9s : %s\n", "Email", data.email);
+        printf("%-9s : %s\n", "Workplace", data.workplace);
+        printf("%-9s : %c\n", "Jenis kelamin", data.jenisKelamin);
+        printf("\n");
+
+        printf(
+            "Menu: \n"
+            "1. Next\n"
+            "2. Previous\n"
+            "3. Exit\n"
+            "Pilihan : ");
+        scanf("%d%*c", &menu);
+        switch (menu) {
+        case 1:
+            current = current->next;
+            break;
+        case 2:
+            current = current->prev;
+            break;
+        case 3:
+            keepGoing = false;
+            break;
+        default:
+            printf("Pilihan tidak valid\n");
+            break;
+        }
+    }
+}
+
 int main() {
   bool lanjut = true;
   readFile();
   while (lanjut) {
     switch (mainMenu()) {
     case 1:
-      printData(&headMain);
+    //   printDataSummary(&headMain);
       break;
     case 2:
       appendNode(inputData(), &headMain, &tailMain);
