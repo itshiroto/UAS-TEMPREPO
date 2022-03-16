@@ -165,6 +165,7 @@ int main() {
     switch (mainMenu()) {
     case 1:
     //   printDataSummary(&headMain);
+      printDataDetail(&headMain);
       break;
     case 2:
       appendNode(inputData(), &headMain, &tailMain);
