@@ -212,6 +212,7 @@ void aboutMe(Contact me) {
     printf("%-9s : %s\n", "Github", "github.com/itshiroto");
     printf("%-9s : %s\n", "Instagram", "itshiroto7");
 
+    printf("\n");
     printf("Halo! Nama saya %s dan saya berdomisili di %s serta berkuliah di %s. ", me.nama,
            me.domisili, me.workplace);
     printf("Saya sangat suka dengan yang namanya programming\n"
@@ -232,6 +233,7 @@ void aboutMe(Contact me) {
            "yang cepat menyelesaikan masalah programming.\n");
     printf("Kalian bisa menghubungi saya melalui discord itshiroto#0704 atau lewat github di\n"
            "github.com/itshiroto\n");
+    printf("\n");
 
 }
 
