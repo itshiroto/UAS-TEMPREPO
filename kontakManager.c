@@ -4,7 +4,6 @@
 #include <string.h>
 
 typedef enum yesNo {
-    writeFile();
     y = 1,
     n = 0,
     Y = 1,
