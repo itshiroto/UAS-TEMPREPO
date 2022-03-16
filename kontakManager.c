@@ -208,8 +208,8 @@ void aboutMe(Contact me) {
     printf("%-9s : %s\n", "Nomor", me.nomor);
     printf("%-9s : %s\n", "Email", me.email);
     printf("%-9s : %s\n", "Workplace", me.workplace);
-    printf("%-9s : %c\n", "Github", "github.com/itshiroto");
-    printf("%-9s : %c\n", "Instagram", "itshiroto7");
+    printf("%-9s : %s\n", "Github", "github.com/itshiroto");
+    printf("%-9s : %s\n", "Instagram", "itshiroto7");
 
     printf("Halo! Nama saya %s dan saya berdomisili di %s serta berkuliah di %s. ", me.nama,
            me.domisili, me.workplace);
