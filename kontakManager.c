@@ -165,7 +165,7 @@ void menuTampilan() {
             "============================\n"
             "|        Data kontak       |\n"
             "============================\n"
-            )
+            );
         printf("1. Tampilan Semua\n"
                "2. Tampilan Detail\n"
                "3. Exit\n"
