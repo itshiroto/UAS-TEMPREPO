@@ -138,6 +138,10 @@ void addContactToPenting() {
   int menu;
   printf("Kontak nomor berapa yang ingin ditambahkan?: ");
   scanf("%d", &menu)
+  if (menu > MAIN_COUNT) {
+    printf("Kontak tidak ditemukan\n");
+    return;
+  }
   for (int i = 1; i <= MAIN_COUNT; i++) {
     Node *curr = *headMain;
     if (i == menu) {
@@ -147,7 +151,7 @@ void addContactToPenting() {
     }
     curr = curr->next;
   }
-  appendNode(data, &headPenting, &tailPenting);
+  printf("Data invalid!");
 }
 
 void printDataSummary(Node **head) {
