@@ -298,6 +298,7 @@ int main() {
       break;
     case 2:
       appendNode(inputData(), &headMain, &tailMain);
+      writeFile();
       break;
     case 3:
       break;
