@@ -61,7 +61,8 @@ void appendNode(Contact data, Node **head, Node **tail)
     }
 }
 
-Contact inputData() {
+Contact inputData()
+{
     Contact data;
     printf("Nama: ");
     scanf("%[^\n]%*c", data.nama);
@@ -80,17 +81,20 @@ Contact inputData() {
     return data;
 }
 
-void readFile() {
+void readFile()
+{
     FILE *file = fopen("RivoWowor59635DaftarTeman.txt", "r");
-    if (file == NULL) {
+    if (file == NULL)
+    {
         printf("File tidak ditemukan\n");
         return;
     }
     Contact data;
     while (
         fscanf(file, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%c%*c",
-        data.nama, data.domisili, data.hubungan, data.nomor,
-        data.email, data.workplace, &data.jenisKelamin) != EOF) {
+               data.nama, data.domisili, data.hubungan, data.nomor,
+               data.email, data.workplace, &data.jenisKelamin) != EOF)
+    {
         appendNode(data, &headMain, &tailMain);
     }
     fclose(file);
