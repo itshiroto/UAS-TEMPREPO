@@ -125,11 +125,11 @@ void printDataDetail(Node **head, Node **tail){
     int count = 0;
     while(keepGoing) {
         if(current == *head)
-            count = 1;
+            count = 0;
         if (current == *tail) 
             count = MAIN_COUNT;
         Contact data = current->data;
-        printf("%-9s : %i/%i \n", "No", 0, MAIN_COUNT); // TODO
+        printf("%-9s : %i/%i \n", "No", count++, MAIN_COUNT); // TODO
         printf("%-9s : %s\n", "Nama", data.nama);
         printf("%-9s : %s\n", "Domisili", data.domisili);
         printf("%-9s : %s\n", "Hubungan", data.hubungan);
