@@ -79,7 +79,7 @@ Contact inputData() {
   printf("Apakah anda yakin dengan data yang dimasukkan? (Y/N): ");
   char ask;
   yesNo confirm;
-  scanf("%c", &ask);
+  scanf("%c%*c", &ask);
   if(ask == 'Y' || ask == 'y') 
     confirm = y;
   else
