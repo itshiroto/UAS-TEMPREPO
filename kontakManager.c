@@ -134,14 +134,16 @@ void writeFile() {
 
 void addContactToPenting() {
   int menu;
+  Node *curr = headMain;
   printf("Kontak nomor berapa yang ingin ditambahkan?: ");
   scanf("%d", &menu);
+  
   if (menu > MAIN_COUNT) {
     printf("Kontak tidak ditemukan\n");
     return;
   }
+
   for (int i = 0; i < MAIN_COUNT; i++) {
-    Node *curr = headMain;
     if (i == menu) {
       Contact data = curr->data;
       appendNode(data, &headPenting, &tailPenting);
