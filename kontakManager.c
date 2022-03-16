@@ -25,8 +25,10 @@ typedef struct Node {
 } Node;
 
 Node *headMain = NULL, *tailMain = NULL;
-int MAIN_COUNT = 0;
 Node *headPenting = NULL, *tailPenting = NULL;
+
+int MAIN_COUNT = 0;
+Contact myself;
 
 int mainMenu() {
   printf("========================================================\n"
@@ -186,6 +188,49 @@ void printDataDetail(Node **head, Node **tail){
             break;
         }
     }
+}
+
+void aboutMe(Contact me) {
+    if (me.nama == NULL) {
+        strcpy(me.nama, "Rivo Juicer Wowor");
+        strcpy(me.domisili, "Kabupaten Berau");
+        strcpy(me.hubungan, "Diri sendiri");
+        strcpy(me.nomor, "0812-1234-5678");
+        strcpy(me.email, "rivo.juicer@student.umn.ac.id");
+        strcpy(me.workplace, "Universitas Multimedia Nusantara");
+        me.jenisKelamin = 'L';
+    }
+    printf("============================================\n"
+           "|               About Me                   |\n"
+           "============================================\n");
+    printf("%-9s : %s\n", "Nama", me.nama);
+    printf("%-9s : %s\n", "Domisili", me.domisili);
+    printf("%-9s : %s\n", "Nomor", me.nomor);
+    printf("%-9s : %s\n", "Email", me.email);
+    printf("%-9s : %s\n", "Workplace", me.workplace);
+    printf("%-9s : %c\n", "Github", "github.com/itshiroto");
+    printf("%-9s : %c\n", "Instagram", "itshiroto7");
+
+    printf("Halo! Nama saya %s dan saya berdomisili di %s serta berkuliah di %s. ", me.nama,
+           me.domisili, me.workplace);
+    printf("Saya sangat suka dengan yang namanya programming, dan saya ingin menjadi seorang "
+           "programmer yang baik dengan berkuliah di kampus UMN.\n");
+    printf("Saya juga ingin menambah koneksi dengan dunia IT di Indonesia,"
+           " baik di kampus, maupun di dunia kerja nantinnya");
+    printf("Saya juga sangat mencintai musik. Oleh karena itu sejak kecil\n"
+           " saya mulai belajar keyboard. Dan hingga sekarang saya masih bermain keyboard\n"
+           " dan mengembangkan skill saya di alat musik lainnya seperti drum, gitar, dan bass.\n");
+    printf("\n");
+    printf("Dalam programming, saya mendalami ilmu web programming serta mengembangkan skill "
+           "dalam algoritma.\n");
+    printf("Bahasa yang saya pakai biasanya adalah, C/C++, Python, dan JavaScript.\n")
+    printf("Dan teknologi yang saya biasa pakai untuk mengembangkan web adalah, HTML, CSS, "
+           "JavaScript, Jekyll, TailwindCSS dan ReactJS.\n");
+    printf("Saya sangat suka dalam memecahkan masalah sehingga saya bisa dibilang orang yang \n"
+           "yang cepat menyelesaikan masalah programming.\n")
+    printf("Kalian bisa menghubungi saya melalui discord itshiroto#0704 atau lewat github di\n"
+           "github.com/itshiroto\n");
+
 }
 
 void menuTampilan() {
