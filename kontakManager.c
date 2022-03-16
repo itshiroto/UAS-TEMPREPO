@@ -399,6 +399,6 @@ int main() {
       break;
     }
   }
-  printf("\nTerima kasih telah menggunakan aplikasi ini!\n")
+  printf("\nTerima kasih telah menggunakan aplikasi ini!\n");
   return 0;
 }
