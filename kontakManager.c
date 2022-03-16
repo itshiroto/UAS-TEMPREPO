@@ -115,7 +115,7 @@ void readFile() {
 }
 
 void writeFile() {
-    FILE *file = fopen("RivoWowor59635DaftarTeman.txt", "w");
+    FILE *file = fopen("output.txt", "w");
     if (file == NULL) {
         printf("File tidak ditemukan\n");
         return;
