@@ -143,7 +143,7 @@ void addContactToPenting() {
     return;
   }
 
-  for (int i = 0; i < MAIN_COUNT; i++) {
+  for (int i = 1; i <= MAIN_COUNT; i++) {
     if (i == menu) {
       Contact data = curr->data;
       appendNode(data, &headPenting, &tailPenting);
