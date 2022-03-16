@@ -1,6 +1,6 @@
 [ ] Tampilkan Data Kontak
     [ ] Tampilkan tabel
-        [ ] Tambah fitur kontak penting
+        [ ] Tambah fitur kontak penting (bikin linked list terpisah)
     [ ] Tampilkan Detail
 [ ] File Processing
     [ ] Read File 
