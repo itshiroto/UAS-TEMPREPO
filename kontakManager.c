@@ -43,7 +43,7 @@ int mainMenu() {
          "4. About me\n");
 
   int pilihan;
-  printf("\nPilihan: ");
+  printf("Pilihan: ");
   scanf("%d%*c", &pilihan);
   return pilihan;
 }
