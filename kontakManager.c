@@ -83,7 +83,7 @@ void printData(Node **head)
 int main()
 {
     Node *head = NULL, *tail = NULL;
-    bool lanjut;
+    bool lanjut = true;
     while (lanjut)
     {
         switch (mainMenu())
