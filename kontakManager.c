@@ -118,8 +118,6 @@ void printData(Node **head)
         printf("| %-30s | %-15s | %-15s | %-15s | %-40s | %-40s | %-15c |\n",
                data.nama, data.domisili, data.hubungan, data.nomor, data.email,
                data.workplace, data.jenisKelamin);
-
-
         current = current->next;
     } while (current != *head);
 }
