@@ -171,7 +171,6 @@ void printDataTabel(Node **head) {
          "----------------------------------------------------------------\n");
   int count = 0;
   do {
-    // print data using tables
     Contact data = current->data;
     printf("| %-3i | %-30s | %-15s | %-15s | %-15s | %-40s | %-40s | %-15c |\n",
            ++count, data.nama, data.domisili, data.hubungan, data.nomor,
@@ -330,6 +329,34 @@ void menuTampilan() {
     }
 }
 
+void printDataPenting(Node **head) {
+  Node *current = *head;
+  if (*head == NULL) {
+    printf("\nData kontak kosong\n");
+    return;
+  }
+  printf("-------------------------------------------------------------------"
+         "-------------------------------------------------------------------"
+         "----------------------------------------------------------------\n");
+  printf("| %-3s | %-30s | %-30s | %-30s |\n",
+         "No", "Nama", "Domisili", "Nomor");
+  printf("-------------------------------------------------------------------"
+         "-------------------------------------------------------------------"
+         "----------------------------------------------------------------\n");
+  int count = 0;
+  do {
+    Contact data = current->data;
+    printf("| %-3i | %-30s | %-30s | %-30s |\n",
+           ++count, data.nama, data.domisili, data.nomor);
+    current = current->next;
+  } while (current != *head);
+  printf("-------------------------------------------------------------------"
+         "-------------------------------------------------------------------"
+         "----------------------------------------------------------------\n");
+
+}
+
+
 int main() {
   bool lanjut = true;
   readFile();
@@ -343,7 +370,6 @@ int main() {
       writeFile();
       break;
     case 3:
-      printDataTabel(&headPenting);
       break;
     case 4:
       aboutMe(myself);
