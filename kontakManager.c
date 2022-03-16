@@ -134,6 +134,22 @@ void writeFile() {
     fclose(file);
 }
 
+void addContactToPenting() {
+  int menu;
+  printf("Kontak nomor berapa yang ingin ditambahkan?: ");
+  scanf("%d", &menu)
+  for (int i = 1; i <= MAIN_COUNT; i++) {
+    Node *curr = *headMain;
+    if (i == menu) {
+      Contact data = curr->data;
+      appendNode(data, &headPenting, &tailPenting);
+      return;
+    }
+    curr = curr->next;
+  }
+  appendNode(data, &headPenting, &tailPenting);
+}
+
 void printDataSummary(Node **head) {
   Node *current = *head;
   if (*head == NULL) {
@@ -161,6 +177,20 @@ void printDataSummary(Node **head) {
   printf("-------------------------------------------------------------------"
          "-------------------------------------------------------------------"
          "----------------------------------------------------------------\n");
+  int choice;
+  printf("1. Tambah kontak ke daftar kontak penting\n"
+         "2. Kembali ke menu utama\n");
+  scanf("%i%*c", &choice);
+  switch(choice) {
+    case 1:
+      addContactToPenting();
+      break;
+    case 2:
+      break;
+    default:
+      printf("Pilihan tidak ditemukan\n");
+      break;
+  }
 }
 
 void printDataDetail(Node **head, Node **tail){
