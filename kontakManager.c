@@ -390,9 +390,14 @@ int main() {
     case 4:
       aboutMe(myself);
       break;
+    case 5:
+      lanjut = false;
+      break;
     default:
       printf("\nPilihan tidak ditemukan\n");
       break;
     }
   }
+  printf("\nTerima kasih telah menggunakan aplikasi ini!\n")
+  return 0;
 }
