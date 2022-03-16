@@ -223,11 +223,11 @@ void aboutMe(Contact me) {
     printf("\n");
     printf("Dalam programming, saya mendalami ilmu web programming serta mengembangkan skill "
            "dalam algoritma.\n");
-    printf("Bahasa yang saya pakai biasanya adalah, C/C++, Python, dan JavaScript.\n")
+    printf("Bahasa yang saya pakai biasanya adalah, C/C++, Python, dan JavaScript.\n");
     printf("Dan teknologi yang saya biasa pakai untuk mengembangkan web adalah, HTML, CSS, "
            "JavaScript, Jekyll, TailwindCSS dan ReactJS.\n");
     printf("Saya sangat suka dalam memecahkan masalah sehingga saya bisa dibilang orang yang \n"
-           "yang cepat menyelesaikan masalah programming.\n")
+           "yang cepat menyelesaikan masalah programming.\n");
     printf("Kalian bisa menghubungi saya melalui discord itshiroto#0704 atau lewat github di\n"
            "github.com/itshiroto\n");
 
