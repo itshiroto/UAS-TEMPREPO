@@ -3,12 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef enum yesNo {
-    y = 1,
-    n = 0,
-    Y = 1,
-    N = 0
-} yesNo;
+typedef enum yesNo { y = 1, n = 0, Y = 1, N = 0 } yesNo;
 typedef struct Contact {
   char nama[50];
   char domisili[50];
@@ -34,7 +29,7 @@ bool isMyselfDone = false;
 int mainMenu() {
   printf("\n");
   printf("========================================================\n"
-         "|                     Kontak Manager                   |\n"
+         "|                  Rivo's Kontak Manager               |\n"
          "|                         v0.1a                        |\n"
          "========================================================\n");
   printf("1. Data kontak\n"
@@ -82,11 +77,11 @@ Contact inputData() {
   scanf("%[^\n]%*c", data.email);
   printf("%-18s : ", "Workplace/Kampus");
   scanf("%[^\n]%*c", data.workplace);
-  while(true){
+  while (true) {
     printf("%-15s : ", "Jenis kelamin");
     scanf("%c%*c", &data.jenisKelamin);
-    if(data.jenisKelamin == 'L' || data.jenisKelamin == 'P' 
-    || data.jenisKelamin == 'l' || data.jenisKelamin == 'p'){
+    if (data.jenisKelamin == 'L' || data.jenisKelamin == 'P' ||
+        data.jenisKelamin == 'l' || data.jenisKelamin == 'p') {
       break;
     }
     printf("Jenis kelamin salah!\n");
@@ -95,7 +90,7 @@ Contact inputData() {
   char ask;
   yesNo confirm;
   scanf("%c%*c", &ask);
-  if(ask == 'Y' || ask == 'y') 
+  if (ask == 'Y' || ask == 'y')
     confirm = y;
   else
     confirm = n;
@@ -118,19 +113,19 @@ void readFile() {
 }
 
 void writeFile() {
-    FILE *file = fopen("output.txt", "w");
-    if (file == NULL) {
-        printf("File tidak ditemukan\n");
-        return;
-    }
-    Node *curr = headMain;
-    do {
-        fprintf(file, "%s,%s,%s,%s,%s,%s,%c\n", curr->data.nama,
-                curr->data.domisili, curr->data.hubungan, curr->data.nomor,
-                curr->data.email, curr->data.workplace, curr->data.jenisKelamin);
-        curr = curr->next;
-    } while (curr != headMain);
-    fclose(file);
+  FILE *file = fopen("output.txt", "w");
+  if (file == NULL) {
+    printf("File tidak ditemukan\n");
+    return;
+  }
+  Node *curr = headMain;
+  do {
+    fprintf(file, "%s,%s,%s,%s,%s,%s,%c\n", curr->data.nama,
+            curr->data.domisili, curr->data.hubungan, curr->data.nomor,
+            curr->data.email, curr->data.workplace, curr->data.jenisKelamin);
+    curr = curr->next;
+  } while (curr != headMain);
+  fclose(file);
 }
 
 void addContactToPenting() {
@@ -138,7 +133,7 @@ void addContactToPenting() {
   Node *curr = headMain;
   printf("Kontak nomor berapa yang ingin ditambahkan?: ");
   scanf("%d", &menu);
-  
+
   if (menu > MAIN_COUNT) {
     printf("Kontak tidak ditemukan\n");
     return;
@@ -200,145 +195,149 @@ void printDataSummary(Node **head) {
          "2. Kembali ke menu utama\n"
          "Pilihan: ");
   scanf("%i%*c", &choice);
-  switch(choice) {
-    case 1:
-      addContactToPenting();
-      break;
-    case 2:
-      break;
-    default:
-      printf("Pilihan tidak ditemukan\n");
-      break;
+  switch (choice) {
+  case 1:
+    addContactToPenting();
+    break;
+  case 2:
+    break;
+  default:
+    printf("Pilihan tidak ditemukan\n");
+    break;
   }
 }
 
-void printDataDetail(Node **head, Node **tail){
-    Node *current = *head;
+void printDataDetail(Node **head, Node **tail) {
+  Node *current = *head;
+  printf("\n");
+  bool keepGoing = true;
+  int menu;
+  int count = 0;
+  while (keepGoing) {
+    if (current == *head)
+      count = 1;
+    if (current == *tail)
+      count = MAIN_COUNT;
+    Contact data = current->data;
     printf("\n");
-    bool keepGoing = true;
-    int menu;
-    int count = 0;
-    while(keepGoing) {
-        if(current == *head)
-            count = 1;
-        if (current == *tail) 
-            count = MAIN_COUNT;
-        Contact data = current->data;
-        printf("\n");
-        printf("=======================================\n");
-        printf("%-9s : %i/%i \n", "No", count, MAIN_COUNT); 
-        printf("%-9s : %s\n", "Nama", data.nama);
-        printf("%-9s : %s\n", "Domisili", data.domisili);
-        printf("%-9s : %s\n", "Hubungan", data.hubungan);
-        printf("%-9s : %s\n", "Nomor", data.nomor);
-        printf("%-9s : %s\n", "Email", data.email);
-        printf("%-9s : %s\n", "Workplace", data.workplace);
-        printf("%-9s : %c\n", "Jenis kelamin", data.jenisKelamin);
-        printf("=======================================\n");
-        printf("\n");
+    printf("=======================================\n");
+    printf("%-9s : %i/%i \n", "No", count, MAIN_COUNT);
+    printf("%-9s : %s\n", "Nama", data.nama);
+    printf("%-9s : %s\n", "Domisili", data.domisili);
+    printf("%-9s : %s\n", "Hubungan", data.hubungan);
+    printf("%-9s : %s\n", "Nomor", data.nomor);
+    printf("%-9s : %s\n", "Email", data.email);
+    printf("%-9s : %s\n", "Workplace", data.workplace);
+    printf("%-9s : %c\n", "Jenis kelamin", data.jenisKelamin);
+    printf("=======================================\n");
+    printf("\n");
 
-        printf(
-            "Menu: \n"
-            "1. Next\n"
-            "2. Previous\n"
-            "3. Exit\n"
-            "Pilihan : ");
-        scanf("%d%*c", &menu);
-        switch (menu) {
-        case 1:
-            current = current->next;
-            count++;
-            break;
-        case 2:
-            current = current->prev;
-            count--;
-            break;
-        case 3:
-            keepGoing = false;
-            break;
-        default:
-            printf("Pilihan tidak valid\n");
-            break;
-        }
+    printf("Menu: \n"
+           "1. Next\n"
+           "2. Previous\n"
+           "3. Exit\n"
+           "Pilihan : ");
+    scanf("%d%*c", &menu);
+    switch (menu) {
+    case 1:
+      current = current->next;
+      count++;
+      break;
+    case 2:
+      current = current->prev;
+      count--;
+      break;
+    case 3:
+      keepGoing = false;
+      break;
+    default:
+      printf("Pilihan tidak valid\n");
+      break;
     }
+  }
 }
 
 void aboutMe(Contact me) {
-    if (!isMyselfDone) {
-        strcpy(me.nama, "Rivo Juicer Wowor");
-        strcpy(me.domisili, "Kabupaten Berau");
-        strcpy(me.hubungan, "Diri sendiri");
-        strcpy(me.nomor, "0812-1234-5678");
-        strcpy(me.email, "rivo.juicer@student.umn.ac.id");
-        strcpy(me.workplace, "Universitas Multimedia Nusantara");
-        me.jenisKelamin = 'L';
-    }
-    printf("============================================\n"
-           "|               About Me                   |\n"
-           "============================================\n");
-    printf("%-9s : %s\n", "Nama", me.nama);
-    printf("%-9s : %s\n", "Domisili", me.domisili);
-    printf("%-9s : %s\n", "Nomor", me.nomor);
-    printf("%-9s : %s\n", "Email", me.email);
-    printf("%-9s : %s\n", "Workplace", me.workplace);
-    printf("%-9s : %s\n", "Github", "github.com/itshiroto");
-    printf("%-9s : %s\n", "Instagram", "itshiroto7");
+  if (!isMyselfDone) {
+    strcpy(me.nama, "Rivo Juicer Wowor");
+    strcpy(me.domisili, "Kabupaten Berau");
+    strcpy(me.hubungan, "Diri sendiri");
+    strcpy(me.nomor, "0812-1234-5678");
+    strcpy(me.email, "rivo.juicer@student.umn.ac.id");
+    strcpy(me.workplace, "Universitas Multimedia Nusantara");
+    me.jenisKelamin = 'L';
+  }
+  printf("============================================\n"
+         "|               About Me                   |\n"
+         "============================================\n");
+  printf("%-9s : %s\n", "Nama", me.nama);
+  printf("%-9s : %s\n", "Domisili", me.domisili);
+  printf("%-9s : %s\n", "Nomor", me.nomor);
+  printf("%-9s : %s\n", "Email", me.email);
+  printf("%-9s : %s\n", "Workplace", me.workplace);
+  printf("%-9s : %s\n", "Github", "github.com/itshiroto");
+  printf("%-9s : %s\n", "Instagram", "itshiroto7");
 
-    printf("\n");
-    printf("Halo! Nama saya %s dan saya berdomisili di %s serta berkuliah di %s.\n", me.nama,
-           me.domisili, me.workplace);
-    printf("Saya sangat suka dengan yang namanya programming"
-            "dan saya ingin menjadi seorang \n"
-           "programmer yang baik dengan berkuliah di kampus UMN.\n");
-    printf("Saya juga ingin menambah koneksi dengan dunia IT di Indonesia,"
-           " baik di kampus, maupun di dunia kerja nantinya\n");
-    printf("Saya juga sangat mencintai musik. Oleh karena itu sejak kecil\n"
-           "saya mulai belajar keyboard. Dan hingga sekarang saya masih bermain keyboard\n"
-           "dan mengembangkan skill saya di alat musik lainnya seperti drum, gitar, dan bass.\n");
-    printf("\n");
-    printf("Dalam programming, saya mendalami ilmu web programming serta mengembangkan skill "
-           "dalam algoritma.\n");
-    printf("Bahasa yang saya pakai biasanya adalah, C/C++, Python, dan JavaScript.\n");
-    printf("Dan teknologi yang saya biasa pakai untuk mengembangkan web adalah, HTML, CSS, "
-           "JavaScript, Jekyll, TailwindCSS dan ReactJS.\n");
-    printf("Saya sangat suka dalam memecahkan masalah sehingga saya bisa dibilang orang yang \n"
-           "yang cepat menyelesaikan masalah programming.\n");
-    printf("Kalian bisa menghubungi saya melalui discord itshiroto#0704 atau lewat github di\n"
-           "github.com/itshiroto\n");
-    printf("\n");
-
+  printf("\n");
+  printf(
+      "Halo! Nama saya %s dan saya berdomisili di %s serta berkuliah di %s.\n",
+      me.nama, me.domisili, me.workplace);
+  printf("Saya sangat suka dengan yang namanya programming"
+         "dan saya ingin menjadi seorang \n"
+         "programmer yang baik dengan berkuliah di kampus UMN.\n");
+  printf("Saya juga ingin menambah koneksi dengan dunia IT di Indonesia,"
+         " baik di kampus, maupun di dunia kerja nantinya\n");
+  printf("Saya juga sangat mencintai musik. Oleh karena itu sejak kecil\n"
+         "saya mulai belajar keyboard. Dan hingga sekarang saya masih bermain "
+         "keyboard\n"
+         "dan mengembangkan skill saya di alat musik lainnya seperti drum, "
+         "gitar, dan bass.\n");
+  printf("\n");
+  printf("Dalam programming, saya mendalami ilmu web programming serta "
+         "mengembangkan skill "
+         "dalam algoritma.\n");
+  printf("Bahasa yang saya pakai biasanya adalah, C/C++, Python, dan "
+         "JavaScript.\n");
+  printf("Dan teknologi yang saya biasa pakai untuk mengembangkan web adalah, "
+         "HTML, CSS, "
+         "JavaScript, Jekyll, TailwindCSS dan ReactJS.\n");
+  printf("Saya sangat suka dalam memecahkan masalah sehingga saya bisa "
+         "dibilang orang yang \n"
+         "yang cepat menyelesaikan masalah programming.\n");
+  printf("Kalian bisa menghubungi saya melalui discord itshiroto#0704 atau "
+         "lewat github di\n"
+         "github.com/itshiroto\n");
+  printf("\n");
 }
 
 void menuTampilan() {
-    bool keepGoing = true;
-    printf("\n");
-    int menu;
-    while(keepGoing) {
-        printf(
-            "============================\n"
-            "|        Data kontak       |\n"
-            "============================\n"
-            );
-        printf("1. Tampilan Semua\n"
-               "2. Tampilan Detail\n"
-               "3. Exit\n"
-               "Pilihan : ");
-        scanf("%d%*c", &menu);
-        switch (menu) {
-        case 1:
-            printDataSummary(&headMain);
-            break;
-        case 2:
-            printDataDetail(&headMain, &tailMain);
-            break;
-        case 3:
-            keepGoing = false;
-            break;
-        default:
-            printf("Pilihan tidak valid\n");
-            break;
-        }
+  bool keepGoing = true;
+  printf("\n");
+  int menu;
+  while (keepGoing) {
+    printf("============================\n"
+           "|        Data kontak       |\n"
+           "============================\n");
+    printf("1. Tampilan Semua\n"
+           "2. Tampilan Detail\n"
+           "3. Exit\n"
+           "Pilihan : ");
+    scanf("%d%*c", &menu);
+    switch (menu) {
+    case 1:
+      printDataSummary(&headMain);
+      break;
+    case 2:
+      printDataDetail(&headMain, &tailMain);
+      break;
+    case 3:
+      keepGoing = false;
+      break;
+    default:
+      printf("Pilihan tidak valid\n");
+      break;
     }
+  }
 }
 
 void printDataPenting(Node **head) {
@@ -356,22 +355,20 @@ void printDataPenting(Node **head) {
   printf("\n");
   printf("--------------------------------------------------------------------"
          "--------------------------------------\n");
-  printf("| %-3s | %-30s | %-30s | %-30s |\n",
-         "No", "Nama", "Domisili", "Nomor");
+  printf("| %-3s | %-30s | %-30s | %-30s |\n", "No", "Nama", "Domisili",
+         "Nomor");
   printf("--------------------------------------------------------------------"
          "--------------------------------------\n");
   int count = 0;
   do {
     Contact data = current->data;
-    printf("| %-3i | %-30s | %-30s | %-30s |\n",
-           ++count, data.nama, data.domisili, data.nomor);
+    printf("| %-3i | %-30s | %-30s | %-30s |\n", ++count, data.nama,
+           data.domisili, data.nomor);
     current = current->next;
   } while (current != *head);
   printf("--------------------------------------------------------------------"
          "--------------------------------------\n");
-
 }
-
 
 int main() {
   bool lanjut = true;
