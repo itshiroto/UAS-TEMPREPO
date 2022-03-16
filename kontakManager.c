@@ -194,8 +194,7 @@ int main() {
   while (lanjut) {
     switch (mainMenu()) {
     case 1:
-      printDataSummary(&headMain);
-      printDataDetail(&headMain);
+      menuTampilan();
       break;
     case 2:
       appendNode(inputData(), &headMain, &tailMain);
