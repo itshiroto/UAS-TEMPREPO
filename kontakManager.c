@@ -108,7 +108,7 @@ void printData(Node **head)
         printf("\nData kontak kosong\n");
         return;
     }
-        printf("| %-30s | %-15s | %-15s | %-15s | %-20s | %-25s | %-10c |\n",
+        printf("| %-30s | %-15s | %-15s | %-15s | %-20s | %-25s | %-10s |\n",
                "Nama", "Domisili", "Hubungan", "Nomor", "Email", "Workplace",
                "Jenis kelamin");
     do
