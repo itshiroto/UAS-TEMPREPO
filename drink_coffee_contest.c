@@ -19,7 +19,7 @@ void printCoffee() {
   for (int i = 0; i < PLAYERS_THREAD; i++) {
     printf("Players %d drinks %d\n", i+1, coffee_drunk[i]);
   }
-  printf("-------------------------------\n");
+  printf("-------------------------------\n\n");
   sem_post(&mutex);
 }
 
