@@ -20,10 +20,12 @@ void printCoffee() {
 }
 
 void drink_coffee(int *drunk) {
-  sem_wait(&mutex);
-  drunk += 1;
-  coffee_available -= 1;
-  sem_post(&mutex);
+  while (coffee_available != 0) {
+    sem_wait(&mutex);
+    drunk += 1;
+    coffee_available -= 1;
+    sem_post(&mutex);
+  }
 }
 
 void *player(void *drunkArr) {
