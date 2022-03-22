@@ -24,7 +24,7 @@ void printCoffee() {
 }
 
 void drink_coffee(int *player) {
-  if (coffee_available < 0) return;
+  if (coffee_available <= 0) return;
   coffee_drunk[*player] += 1;
   printf("Player %d drinks a coffee\n", *player);
   coffee_available -= 1;
