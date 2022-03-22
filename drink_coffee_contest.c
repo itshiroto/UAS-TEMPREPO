@@ -55,7 +55,7 @@ int main() {
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
     void *playerNum;
-    pthread_join(players[i], &playerNum) == 0;
+    pthread_join(players[i], &playerNum);
   }
   
   printf("Winners:\n");
