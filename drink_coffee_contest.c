@@ -61,8 +61,8 @@ int main() {
     int winner_array[5];
     //search
     int max = i;
-    for(int j =0; j < PLAYERS_THREAD; j++){
-        if(coffee_drunk > max){
+    for(int j = 0; j < PLAYERS_THREAD; j++){
+        if(coffee_drunk[j] > coffee_drunk[max]){
           winner_array[i] = j;
           coffee_drunk[j]=0;
        }
