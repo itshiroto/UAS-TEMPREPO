@@ -27,7 +27,6 @@ void drink_coffee(int *player) {
   if (coffee_available < 0) return;
   coffee_drunk[*player] += 1;
   coffee_available -= 1;
-  sem_post(&mutex);
 }
 
 void *player(void *drunkArr) {
@@ -36,6 +35,7 @@ void *player(void *drunkArr) {
     sem_wait(&mutex);
     drink_coffee(playerNum);
     printf("Player %d drinks a coffee\n", *playerNum);
+    sem_post(&mutex);
     printCoffee();
   }
   winner[winnerPos] = *playerNum;
