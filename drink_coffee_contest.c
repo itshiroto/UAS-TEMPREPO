@@ -16,8 +16,8 @@
 // The program must announce the winner from first to third place
 
 int coffee_available, coffee_taken[PLAYERS_THREAD];
+sem_t mutex;
 
 int main() {
     pthread_t players[PLAYERS_THREAD];
-    sem_t mutex;
 }
