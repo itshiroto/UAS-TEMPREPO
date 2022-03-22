@@ -53,9 +53,7 @@ int main() {
     pthread_create(&players[i], NULL, player, (void *) &a[i]);
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    void *playerNum;
-    pthread_join(players[i], &playerNum);
-    printf("%d", (int) playerNum);
+    pthread_join(players[i], NULL);
   }
   
   printf("\nWinners:\n");
