@@ -50,7 +50,7 @@ int main() {
     int curr = 0;
     printf("%-10s %-10s\n", "Time", "Job ID");
     for(int i = 0; i <= totalRuntime; i++) {
-        printf("%d - %d", i, jobs[curr].id);
+        printf("%d - %d\n", i, jobs[curr].id);
         if (i >= jobs[curr].runTime) {
             curr++;
         }
