@@ -53,7 +53,7 @@ int main() {
         totalWaitTime += jobs[i].waitTime;
         totalRuntime += jobs[i].runTime;
     }
-    int queue[6];
+    job queue[6];
     int queuePos = 0;
     printf("%-10s %-10s\n", "Time", "Job ID");
     int curr = 0;
@@ -76,7 +76,6 @@ int main() {
                 curr++;
             }
         }
-
     }
     float avgWaitTime = (float) totalWaitTime / 6;
     float avgTat = (float) totalTat / 6;
