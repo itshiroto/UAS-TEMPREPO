@@ -37,6 +37,9 @@ void *player(void *drunkArr) {
     drink_coffee(playerNum);
     printCoffee();
   }
+  winner[winnerPos] = *playerNum;
+  winnerPos++;
+  return NULL;
 }
 
 int main() {
