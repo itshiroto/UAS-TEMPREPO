@@ -40,7 +40,7 @@ void *player(void *drunkArr) {
 
 int main() {
   pthread_t players[PLAYERS_THREAD];
-  int i, j;
+  int i, j = 0;
   int a[PLAYERS_THREAD], winner[PLAYERS_THREAD];
   sem_init(&mutex, 0, 1);
   printf("How many coffee available?\n");
@@ -59,7 +59,7 @@ int main() {
   
   printf("Winners:\n");
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    printf("%d: Player %d\n", i, winner[i]+1);
+    printf("%d: Player %d\n", i+1, winner[i]+1);
   }
   
   return 0;
