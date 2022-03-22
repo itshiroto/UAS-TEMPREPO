@@ -63,7 +63,7 @@ int main() {
     for(int j = 0; j < PLAYERS_THREAD; j++){
         if(coffee_drunk[j] > coffee_drunk[max]){
           winner[i] = j;
-          coffee_drunk[j] =0 ;
+          coffee_drunk[j] = 0 ;
        }
     }
   }
