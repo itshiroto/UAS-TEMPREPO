@@ -9,12 +9,6 @@
 #define MIN_COFFEE 3
 #define PLAYERS_THREAD 5
 
-// Create a program that will create 5 thread, and all of them will compete to drink most coffee
-// The program has constraints of coffee available, 3 < n < 100
-// The program must fair and no thread is taking all of the coffee
-// The program must be able to print the coffee taken by each thread
-// The program must announce the winner from first to third place
-
 int coffee_available, coffee_drunk[PLAYERS_THREAD];
 sem_t mutex;
 
@@ -34,5 +28,13 @@ void *player(void *drunkArr) {
 
 int main() {
   pthread_t players[PLAYERS_THREAD];
+  int i;
+  for (i = 0; i < PLAYERS_THREAD; i++) {
+    coffee_drunk[i] = 0;
+    pthread_create(&players[i], NULL, player, &coffee_drunk[i]);
+  }
+  for (i = 0; i < PLAYERS_THREAD; i++) {
+    pthread_join(players[i], NULL);
+  }
 
 }
