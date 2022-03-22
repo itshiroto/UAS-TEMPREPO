@@ -36,17 +36,20 @@ void *player(void *drunkArr) {
 
 int main() {
   pthread_t players[PLAYERS_THREAD];
-  int i, firstPlace;
+  int i;
   for (i = 0; i < PLAYERS_THREAD; i++) {
     coffee_drunk[i] = 0;
     pthread_create(&players[i], NULL, player, &coffee_drunk[i]);
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    if (coffee_drunk[i] > firstPlace) {
-      firstPlace = i;
-    }
     pthread_join(players[i], NULL);
   }
-  for ()
-
+  // determine the winner based on how many drinks they drank
+  int max = 0;
+  for (i = 0; i < PLAYERS_THREAD; i++) {
+    if (coffee_drunk[i] > max) {
+      max = coffee_drunk[i];
+    }
+  }
+  printf("The winner is player %d with %d drinks\n", i+1, max);
 }
