@@ -62,7 +62,7 @@ int main() {
   
   printf("Winners:\n");
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    printf("%d: Player %d\n", i+1, winner[i]);
+    printf("%d: Player %d\n", i+1, winner[i]+1);
   }
   
   return 0;
