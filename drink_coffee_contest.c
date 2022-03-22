@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<semaphore.h>
 #include<pthread.h>
-#include<unistd.h>
 #include<sys/types.h>
 
 #define MAX_COFFEE 100
