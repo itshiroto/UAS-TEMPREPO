@@ -40,7 +40,8 @@ void *player(void *drunkArr) {
 
 int main() {
   pthread_t players[PLAYERS_THREAD];
-  int i, a[PLAYERS_THREAD];
+  int i, j;
+  int a[PLAYERS_THREAD], winner[PLAYERS_THREAD];
   sem_init(&mutex, 0, 1);
   printf("How many coffee available?\n");
   scanf("%d", &coffee_available);
@@ -50,16 +51,16 @@ int main() {
     pthread_create(&players[i], NULL, player, (void *) &a[i]);
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    pthread_join(players[i], NULL);
+    if(pthread_join(players[i], NULL) == 0) {
+      winner[j] = i;
+      j++;
+    };
   }
-  // determine the winner based on how many drinks they drank
-  int max = 0;
+  
+  printf("Winners:\n");
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    if (coffee_drunk[i] > max) {
-      max = coffee_drunk[i];
-    }
+    printf("%d: Player %d\n", i, winner[i]+1);
   }
-  printf("The winner is player %d with %d drinks\n", i+1, max);
   
   return 0;
 }
