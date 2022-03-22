@@ -52,7 +52,7 @@ int main() {
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
     void *playerNum;
-    if(pthread_join(players[i], playerNum) == 0) {
+    if(pthread_join(players[i], &playerNum) == 0) {
       winner[j] = (int) playerNum;
       printf("Test %d\n", i);
       j++;
