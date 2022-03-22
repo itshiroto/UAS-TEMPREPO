@@ -66,12 +66,11 @@ int main() {
     }
   }
 
-
-  // for (i = 0; i < PLAYERS_THREAD; i++) {
-  //   printf("%d%s place: Player %d\n", i+1,
-  //           i == 0 ? "st" : i == 1 ? "nd" : i == 2 ? "rd" : "th",
-  //           winner[i]+1);
-  // }
+  for (i = 0; i < PLAYERS_THREAD; i++) {
+    printf("%d%s place: Player %d\n", i+1,
+            i == 0 ? "st" : i == 1 ? "nd" : i == 2 ? "rd" : "th",
+            winner[i]+1);
+  }
   
   return 0;
 }
