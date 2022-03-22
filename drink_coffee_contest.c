@@ -37,7 +37,6 @@ void *player(void *drunkArr) {
     drink_coffee(playerNum);
     printf("Player %d drinks a coffee\n", *playerNum);
     printCoffee();
-    usleep(50000);
   }
   winner[winnerPos] = *playerNum;
   winnerPos++;
