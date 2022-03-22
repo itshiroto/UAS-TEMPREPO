@@ -31,13 +31,13 @@ void drink_coffee(int *player) {
 }
 
 void *player(void *drunkArr) {
-  int *playerNum = drunkArr;
+  int playerNum = *drunkArr;
   printf("Player: %d\n", *playerNum);
   while (coffee_available > 0) {
     drink_coffee(playerNum);
     printCoffee();
   }
-  pthread_exit((void *) (*playerNum));
+  pthread_exit((void *) (playerNum));
 }
 
 int main() {
