@@ -58,7 +58,6 @@ int main() {
     printf("%-10s %-10s\n", "Time", "Job ID");
     int curr = 0;
     for(int i = 0; i <= totalRuntime; i++) {
-        printf("%-10d %-10d\n", i, queue[curr].id);
         // checks if there's a job that have same arrival time and time
         // If there's a job, then current job would be queued
         // If none, then the incoming job would be queued
@@ -76,6 +75,7 @@ int main() {
                 curr++;
             }
         }
+        printf("%-10d %-10d\n", i, queue[curr].id);
     }
     float avgWaitTime = (float) totalWaitTime / 6;
     float avgTat = (float) totalTat / 6;
