@@ -57,15 +57,18 @@ int main() {
   }
   
   printf("\nWinners:\n");
-  for (i = 0; i < PLAYERS_THREAD; i++) {
-    for(int j = 0; j < PLAYERS_THREAD; j++){
-      if (coffee_drunk[j] > coffee_drunk[winnerPos]) {
-        winnerPos = j;
-      }
-      coffee_drunk[winnerPos] = 0;
-      winner[i] = winnerPos;
+  for(i = 0; i < PLAYERS_THREAD; i++){
+    int winner_array[5];
+    //search
+    int max = i[0];
+    for(int j =0; j < PLAYERS_THREAD; j++){
+        if(winner[j] > max){
+          winner_array[i] = j;
+          winner[j]=0;
+       }
     }
   }
+  
 
   for (i = 0; i < PLAYERS_THREAD; i++) {
     printf("%d%s place: Player %d\n", i+1,
