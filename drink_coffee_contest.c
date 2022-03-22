@@ -21,18 +21,18 @@ void printCoffee() {
   sem_post(&mutex);
 }
 
-void drink_coffee(int *drunk) {
+void drink_coffee(int *player) {
   if (coffee_available == 0) return;
   sem_wait(&mutex);
-  drunk += 1;
+  coffee_drunk[player] += 1;
   coffee_available -= 1;
   sem_post(&mutex);
 }
 
 void *player(void *drunkArr) {
   while (coffee_available != 0) {
-    int *drunk = drunkArr;
-    drink_coffee(drunk);
+    int *player = drunkArr;
+    drink_coffee(player);
     printCoffee();
   }
   return NULL;
@@ -47,7 +47,7 @@ int main() {
 
   for (i = 0; i < PLAYERS_THREAD; i++) {
     a[i] = i;
-    pthread_create(&players[i], NULL, player, (void *) &coffee_drunk[i]);
+    pthread_create(&players[i], NULL, player, (void *) &a[i]);
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
     pthread_join(players[i], NULL);
