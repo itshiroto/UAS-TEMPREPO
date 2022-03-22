@@ -29,6 +29,8 @@ int main() {
                 jobs[j] = temp;
             }
         }
+    }
+    for (int i = 0; i < 6; i++) {
         printf("%d ", jobs[i].id);
     }
     printf("\n");
