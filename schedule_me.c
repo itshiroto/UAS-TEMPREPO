@@ -23,21 +23,21 @@ int main() {
 
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 6; j++) {
-            if (jobs[i].runTime < jobs[j].runTime) {
+            if (jobs[i].runTime > jobs[j].runTime) {
                 job temp = jobs[i];
                 jobs[i] = jobs[j];
                 jobs[j] = temp;
             }
         }
     }
+    // find turn around time
+    for (int i = 0; i < 6; i++) {
+        jobs[i].turnAroundTime = jobs[i].waitTime + jobs[i].runTime;
+    }
     // find wait time
     jobs[0].waitTime = 0;
     for (int i = 1; i < 6; i++) {
         jobs[i].waitTime = jobs[i-1].waitTime + jobs[i-1].runTime;
-    }
-    // find turn around time
-    for (int i = 0; i < 6; i++) {
-        jobs[i].turnAroundTime = jobs[i].waitTime + jobs[i].runTime;
     }
     
     // find total time it takes to run all jobs
