@@ -51,8 +51,8 @@ int main() {
     pthread_create(&players[i], NULL, player, (void *) &a[i]);
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    int playerNum;
-    if(pthread_join(players[i], (void *)playerNum) == 0) {
+    void *playerNum;
+    if(pthread_join(players[i], playerNum) == 0) {
       winner[j] = (int) playerNum;
       printf("Test %d\n", i);
       j++;
