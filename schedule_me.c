@@ -57,7 +57,7 @@ int main() {
     for(int i = 0; i <= totalRuntime; i++) {
         printf("%d - %d\n", i, jobs[curr].id);
         jobs[curr].runTime--;
-        if (jobs[curr].runTime == 0) {
+        if (jobs[curr].runTime < 0) {
             curr++;
         }
     }
