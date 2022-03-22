@@ -28,7 +28,7 @@ void drink_coffee(int *drunk) {
 }
 
 void *player(void *drunkArr) {
-  int *drunk = (int *) drunkArr;
+  int *drunk = drunkArr;
   while (coffee_available != 0) {
     drink_coffee(drunk);
     printCoffee();
