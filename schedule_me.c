@@ -40,11 +40,25 @@ int main() {
         jobs[i].turnAroundTime = jobs[i].waitTime + jobs[i].runTime;
     }
     
-    // sort the jobs by burst time
-    
-
-    
-
+    // find total time it takes to run all jobs
+    int totalTat = 0, totalWaitTime = 0, totalRuntime = 0;
+    for (int i = 0; i < 6; i++) {
+        totalTat += jobs[i].turnAroundTime;
+        totalWaitTime += jobs[i].waitTime;
+        totalRuntime += jobs[i].runTime;
+    }
+    int curr = 0;
+    printf("%-10s %-10s\n", "Time", "Job ID");
+    for(int i = 0; i <= totalRuntime; i++) {
+        printf("%d - %d", i, jobs[curr].id);
+        if (i >= jobs[curr].runTime) {
+            curr++;
+        }
+    }
+    float avgWaitTime = (float) totalWaitTime / 6;
+    float avgTat = (float) totalTat / 6;
+    printf("\nAverage Wait Time: %f\n", avgWaitTime);
+    printf("Average Turn Around Time: %f\n", avgTat);
 
     return 0;
 }
