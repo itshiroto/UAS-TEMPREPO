@@ -36,7 +36,7 @@ void *player(void *drunkArr) {
     drink_coffee(playerNum);
     printCoffee();
   }
-  return (void *)playerNum;
+  pthread_exit((void *)playerNum);
 }
 
 int main() {
