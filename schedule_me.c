@@ -28,8 +28,8 @@ int main() {
                 jobs[i] = jobs[j];
                 jobs[j] = temp;
             }
-            printf("%d ", jobs[i].id);
         }
+        printf("%d ", jobs[i].id);
     }
     printf("\n");
     // find turn around time
