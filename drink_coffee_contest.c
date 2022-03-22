@@ -30,18 +30,23 @@ void *player(void *drunkArr) {
   int *drunk = (int *) drunkArr;
   while (coffee_available < 0) {
     drink_coffee(drunk);
+    printCoffee();
   }
 }
 
 int main() {
   pthread_t players[PLAYERS_THREAD];
-  int i;
+  int i, firstPlace;
   for (i = 0; i < PLAYERS_THREAD; i++) {
     coffee_drunk[i] = 0;
     pthread_create(&players[i], NULL, player, &coffee_drunk[i]);
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
+    if (coffee_drunk[i] > firstPlace) {
+      firstPlace = i;
+    }
     pthread_join(players[i], NULL);
   }
+  for ()
 
 }
