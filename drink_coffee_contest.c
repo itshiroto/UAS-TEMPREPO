@@ -33,7 +33,7 @@ void drink_coffee(int *player) {
 
 void *player(void *drunkArr) {
   int *playerNum = drunkArr;
-  while (coffee_available > 0) {
+  while (coffee_available >= 0) {
     sem_wait(&mutex);
     drink_coffee(playerNum);
     sem_post(&mutex);
