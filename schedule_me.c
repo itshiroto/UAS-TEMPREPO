@@ -22,8 +22,11 @@ int main() {
 
     printf("\n");
     jobs[0].waitTime = 0;
-    for (int i = 1; i < 6; i++) {
-        jobs[i].waitTime = jobs[i-1].waitTime + jobs[i-1].runTime;
+    for (int i = 0; i < 6; i++) {
+        jobs[i].waitTime = 0;
+        for (int j = 1; j < i; j++) {
+            jobs[i].waitTime += jobs[j].runTime;
+        }
     }
 
     for (int i = 0; i < 6; i++) {
@@ -50,7 +53,7 @@ int main() {
         printf("%-10d %-10d\n", i, queue[curr].id);
         if (queuePos > 0) {
             queue[curr].runTime--;
-            if (queue[curr].runTime == 0) {
+            if (queue[curr].runTime < 0) {
                 queuePos--;
                 curr++;
             }
