@@ -56,4 +56,6 @@ int main() {
     }
   }
   printf("The winner is player %d with %d drinks\n", i+1, max);
+  
+  return 0;
 }
