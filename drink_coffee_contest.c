@@ -27,7 +27,6 @@ void drink_coffee(int *player) {
   if (coffee_available < 0) return;
   sem_wait(&mutex);
   coffee_drunk[*player] += 1;
-  printf("Player %d drinks a coffee\n", *player);
   coffee_available -= 1;
   sem_post(&mutex);
 }
@@ -36,6 +35,7 @@ void *player(void *drunkArr) {
   int *playerNum = drunkArr;
   while (coffee_available > 0) {
     drink_coffee(playerNum);
+    printf("Player %d drinks a coffee\n", *player);
     printCoffee();
     usleep(50000);
   }
