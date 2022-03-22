@@ -66,7 +66,7 @@ int main() {
                 queuePos++;
             }
         }
-        if (queue[curr].arrivalTime == i) {
+        if (queue[curr].runTime == i) {
             curr += 1;
         }
     }
