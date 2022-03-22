@@ -67,6 +67,7 @@ int main() {
                 queuePos++;
             }
         }
+        printf("%-10d %-10d\n", i, queue[curr].id);
         // if there's a job in the queue, then it would be executed
         if (queuePos > 0) {
             queue[curr].runTime--;
@@ -75,7 +76,6 @@ int main() {
                 curr++;
             }
         }
-        printf("%-10d %-10d\n", i, queue[curr].id);
     }
     float avgWaitTime = (float) totalWaitTime / 6;
     float avgTat = (float) totalTat / 6;
