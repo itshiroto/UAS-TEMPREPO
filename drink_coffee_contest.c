@@ -41,8 +41,7 @@ void *player(void *drunkArr) {
 
 int main() {
   pthread_t players[PLAYERS_THREAD];
-  int i;
-  int a[PLAYERS_THREAD], 
+  int i, a[PLAYERS_THREAD];
   sem_init(&mutex, 0, 1);
   printf("How many coffee available?\n");
   scanf("%d", &coffee_available);
