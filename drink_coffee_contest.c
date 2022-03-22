@@ -35,7 +35,7 @@ void *player(void *drunkArr) {
     drink_coffee(player);
     printCoffee();
   }
-  return NULL;
+  return (void *)drunkArr;
 }
 
 int main() {
