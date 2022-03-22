@@ -11,6 +11,7 @@
 #define PLAYERS_THREAD 5
 
 int coffee_available, coffee_drunk[PLAYERS_THREAD];
+int winnerPos = 0, winner[PLAYERS_THREAD];
 sem_t mutex;
 
 void printCoffee() {
@@ -31,19 +32,17 @@ void drink_coffee(int *player) {
 }
 
 void *player(void *drunkArr) {
-  int playerNum = (int) drunkArr;
   printf("Player: %d\n", playerNum);
   while (coffee_available > 0) {
     drink_coffee(&playerNum);
     printCoffee();
   }
-  pthread_exit((void *) (playerNum));
 }
 
 int main() {
   pthread_t players[PLAYERS_THREAD];
-  int i, j = 0;
-  int a[PLAYERS_THREAD], winner[PLAYERS_THREAD];
+  int i;
+  int a[PLAYERS_THREAD], 
   sem_init(&mutex, 0, 1);
   printf("How many coffee available?\n");
   scanf("%d", &coffee_available);
@@ -55,7 +54,6 @@ int main() {
   for (i = 0; i < PLAYERS_THREAD; i++) {
     void *playerNum;
     if(pthread_join(players[i], &playerNum) == 0) {
-      winner[j] = (int)(intptr_t)playerNum;
       printf("Test %d\n", i);
       j++;
     };
