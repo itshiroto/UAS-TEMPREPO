@@ -66,7 +66,8 @@ int main() {
                 queuePos++;
             }
         }
-        if (queue[curr].runTime == i) {
+        queue[curr].runTime--;
+        if (queue[curr].runTime == 0) {
             curr += 1;
         }
     }
