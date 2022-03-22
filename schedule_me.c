@@ -53,23 +53,30 @@ int main() {
         totalWaitTime += jobs[i].waitTime;
         totalRuntime += jobs[i].runTime;
     }
-    job queue[6];
-    queue[0] = jobs[0];
-    int queuePos = 1;
+    int queue[6];
+    int queuePos = 0;
     printf("%-10s %-10s\n", "Time", "Job ID");
     int curr = 0;
     for(int i = 0; i <= totalRuntime; i++) {
         printf("%-10d %-10d\n", i, queue[curr].id);
+        // checks if there's a job that have same arrival time and time
+        // If there's a job, then current job would be queued
+        // If none, then the incoming job would be queued
         for (int j = 0; j < 6; j++) {
             if (jobs[j].arrivalTime == i) {
                 queue[queuePos] = jobs[j];
                 queuePos++;
             }
         }
-        queue[curr].runTime--;
-        if (queue[curr].runTime == i) {
-            curr += 1;
+        // if there's a job in the queue, then it would be executed
+        if (queuePos > 0) {
+            queue[curr].runTime--;
+            if (queue[curr].runTime == 0) {
+                queuePos--;
+                curr++;
+            }
         }
+
     }
     float avgWaitTime = (float) totalWaitTime / 6;
     float avgTat = (float) totalTat / 6;
