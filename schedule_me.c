@@ -21,9 +21,10 @@ int main() {
         jobs[i].runTime = runTime[i];
     }
 
-    for (int i = 0; i < 6; i++) {
-        for (int j = i; j < 6; j++) {
-            if (jobs[i].runTime < jobs[j].runTime) {
+    // sort the jobs by the runtime
+    for (int i = 0; i < 5; i++) {
+        for (int j = i + 1; j < 6; j++) {
+            if (jobs[i].runTime > jobs[j].runTime) {
                 job temp = jobs[i];
                 jobs[i] = jobs[j];
                 jobs[j] = temp;
