@@ -62,6 +62,7 @@ int main() {
       if (coffee_drunk[j] > coffee_drunk[winnerPos]) {
         winnerPos = j;
       }
+      winner[winnerPos] = 0;
       winner[i] = winnerPos;
     }
   }
