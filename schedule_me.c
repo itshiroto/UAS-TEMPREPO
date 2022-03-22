@@ -22,18 +22,18 @@ int main() {
     }
 
     // sort the jobs by the runtime
-    for (int i = 0; i < 5; i++) {
-        for (int j = i + 1; j < 6; j++) {
-            if (jobs[i].runTime > jobs[j].runTime) {
-                job temp = jobs[i];
-                jobs[i] = jobs[j];
-                jobs[j] = temp;
-            }
-        }
-    }
-    for (int i = 0; i < 6; i++) {
-        printf("%d ", jobs[i].id);
-    }
+    // for (int i = 0; i < 5; i++) {
+    //     for (int j = i + 1; j < 6; j++) {
+    //         if (jobs[i].runTime > jobs[j].runTime) {
+    //             job temp = jobs[i];
+    //             jobs[i] = jobs[j];
+    //             jobs[j] = temp;
+    //         }
+    //     }
+    // }
+    // for (int i = 0; i < 6; i++) {
+    //     printf("%d ", jobs[i].id);
+    // }
     printf("\n");
     // find wait time
     jobs[0].waitTime = 0;
@@ -53,14 +53,23 @@ int main() {
         totalWaitTime += jobs[i].waitTime;
         totalRuntime += jobs[i].runTime;
     }
-    int curr = 0;
+    job queue[6];
+    job queue[0] = jobs[0];
+    int queuePos = 1;
     printf("%-10s %-10s\n", "Time", "Job ID");
     for(int i = 0; i <= totalRuntime; i++) {
-        printf("%-10d %-10d\n", i, jobs[curr].id);
-        jobs[curr].runTime--;
-        if (jobs[curr].runTime < 0) {
-            curr++;
+        int curr = 0;
+        printf("%-10d %-10d\n", i, queue[curr].id);
+        for (int j = 0; j < 6; j++) {
+            if (jobs[j].arrivalTime == i) {
+                queue[queuePos] = jobs[j];
+                queuePos++;
+            }
         }
+        if (queue[curr].arrivalTime == i) {
+            curr += 1;
+        }
+
     }
     float avgWaitTime = (float) totalWaitTime / 6;
     float avgTat = (float) totalTat / 6;
