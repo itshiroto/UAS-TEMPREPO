@@ -35,7 +35,7 @@ void *player(void *drunkArr) {
   int *playerNum = drunkArr;
   while (coffee_available > 0) {
     drink_coffee(playerNum);
-    printf("Player %d drinks a coffee\n", *player);
+    printf("Player %d drinks a coffee\n", *playerNum);
     printCoffee();
     usleep(50000);
   }
