@@ -38,8 +38,6 @@ void *player(void *drunkArr) {
     drink_coffee(playerNum);
     sem_post(&mutex);
   }
-  winner[winnerPos] = *playerNum;
-  winnerPos++;
   return NULL;
 }
 
