@@ -1,9 +1,9 @@
-#include<fcntl.h>
-#include<stdio.h>
-#include<stdlib.h>
-#include<semaphore.h>
-#include<pthread.h>
-#include<sys/types.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <semaphore.h>
+#include <pthread.h>
+#include <sys/types.h>
 
 #define MAX_COFFEE 100
 #define MIN_COFFEE 3
