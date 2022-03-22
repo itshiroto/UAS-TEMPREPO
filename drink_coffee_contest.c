@@ -53,6 +53,7 @@ int main() {
   for (i = 0; i < PLAYERS_THREAD; i++) {
     if(pthread_join(players[i], NULL) == 0) {
       winner[j] = i;
+      printf("Test %d\n", i);
       j++;
     };
   }
