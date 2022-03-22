@@ -37,7 +37,7 @@ void *player(void *drunkArr) {
   while (coffee_available > 0) {
     drink_coffee(playerNum);
     printCoffee();
-    usleep(5000);
+    usleep(50000);
   }
   winner[winnerPos] = *playerNum;
   winnerPos++;
