@@ -23,7 +23,7 @@ int main() {
 
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 6; j++) {
-            if (jobs[i].runTime > jobs[j].runTime) {
+            if (jobs[i].runTime < jobs[j].runTime) {
                 job temp = jobs[i];
                 jobs[i] = jobs[j];
                 jobs[j] = temp;
