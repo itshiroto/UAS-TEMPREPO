@@ -20,4 +20,5 @@ sem_t mutex;
 
 int main() {
     pthread_t players[PLAYERS_THREAD];
+
 }
