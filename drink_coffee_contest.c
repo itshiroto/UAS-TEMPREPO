@@ -19,7 +19,7 @@ void printCoffee() {
   printf("-------------------------------");
 }
 
-void drink_coffee(int drunk) {
+void drink_coffee(int *drunk) {
   sem_wait(&mutex);
   drunk += 1;
   coffee_available -= 1;
