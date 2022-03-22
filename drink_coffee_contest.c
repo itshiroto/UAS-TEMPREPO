@@ -21,7 +21,7 @@ void printCoffee() {
   sem_post(&mutex);
 }
 
-void drink_coffee(int *drunk) {
+void drink_coffee(int **drunk) {
   if (coffee_available == 0) return;
   sem_wait(&mutex);
   drunk += 1;
@@ -32,7 +32,7 @@ void drink_coffee(int *drunk) {
 void *player(void *drunkArr) {
   while (coffee_available != 0) {
     int *drunk = drunkArr;
-    drink_coffee(drunk);
+    drink_coffee(&drunk);
     printCoffee();
   }
   return NULL;
