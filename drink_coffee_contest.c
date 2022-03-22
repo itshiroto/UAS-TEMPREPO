@@ -57,15 +57,30 @@ int main() {
   }
   
   printf("\nWinners:\n");
-  for(i = 0; i < PLAYERS_THREAD; i++){
-    //search
+  // for(i = 0; i < PLAYERS_THREAD; i++){
+  //   int winner_array[5];
+  //   //search
+  //   int max = i;
+  //   for(int j = 0; j < PLAYERS_THREAD; j++){
+  //       if(coffee_drunk[j] > coffee_drunk[max]){
+  //         winner_array[i] = j;
+  //         coffee_drunk[j] =0 ;
+  //      }
+  //   }
+  // }
+  
+  // search for the placement rankings of the players
+  // based on the number of coffee they drank
+  // and put the player number in the array winner
+  for (i = 0; i < PLAYERS_THREAD; i++) {
     int max = i;
-    for(int j = 0; j < PLAYERS_THREAD; j++){
-        if(coffee_drunk[j] > winner[max]){
-          winner[i] = j;
-          coffee_drunk[j] = 0 ;
-       }
+    for (int j = 0; j < PLAYERS_THREAD; j++) {
+      if (coffee_drunk[j] > coffee_drunk[max]) {
+        max = j;
+      }
     }
+    winner[i] = max;
+    coffee_drunk[max] = 0;
   }
   
 
