@@ -10,7 +10,13 @@
 #define PLAYERS_THREAD 5
 
 int coffee_available, coffee_drunk[PLAYERS_THREAD];
-sem_t mutex, playersMtx[PLAYERS_THREAD];
+sem_t mutex;
+
+void printCoffee() {
+  for (int i = 0; i < PLAYERS_THREAD; i++) {
+    printf("Players %d drinks %d\n", i+1, coffee_drunk[i]);
+  }
+}
 
 void drink_coffee(int drunk) {
   sem_wait(&mutex);
