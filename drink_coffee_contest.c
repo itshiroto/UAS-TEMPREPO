@@ -32,9 +32,10 @@ void drink_coffee(int *player) {
 }
 
 void *player(void *drunkArr) {
+  int playerNum = *((int *)drunkArr);
   printf("Player: %d\n", playerNum);
   while (coffee_available > 0) {
-    drink_coffee(&playerNum);
+    drink_coffee(playerNum);
     printCoffee();
   }
 }
@@ -55,13 +56,12 @@ int main() {
     void *playerNum;
     if(pthread_join(players[i], &playerNum) == 0) {
       printf("Test %d\n", i);
-      j++;
     };
   }
   
   printf("Winners:\n");
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    printf("%d: Player %d\n", i+1, winner[i]+1);
+    printf("%d: Player %d\n", i+1, winner[i]);
   }
   
   return 0;
