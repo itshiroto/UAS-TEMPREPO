@@ -30,7 +30,7 @@ void drink_coffee(int *player) {
 }
 
 void *player(void *drunkArr) {
-  while (coffee_available <= 0) {
+  while (coffee_available < 0) {
     int *player = drunkArr;
     drink_coffee(player);
     printCoffee();
