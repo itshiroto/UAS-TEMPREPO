@@ -45,7 +45,7 @@ int main() {
 
   for (i = 0; i < PLAYERS_THREAD; i++) {
     coffee_drunk[i] = 0;
-    pthread_create(&players[i], NULL, player, &coffee_drunk[i]);
+    pthread_create(&players[i], NULL, player, (void *) &coffee_drunk[i]);
   }
   for (i = 0; i < PLAYERS_THREAD; i++) {
     pthread_join(players[i], NULL);
