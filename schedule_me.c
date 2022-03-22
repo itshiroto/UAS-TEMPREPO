@@ -28,8 +28,10 @@ int main() {
                 jobs[i] = jobs[j];
                 jobs[j] = temp;
             }
+            printf("%d ", jobs[i].id);
         }
     }
+    printf("\n");
     // find turn around time
     for (int i = 0; i < 6; i++) {
         jobs[i].turnAroundTime = jobs[i].waitTime + jobs[i].runTime;
@@ -51,9 +53,6 @@ int main() {
     printf("%-10s %-10s\n", "Time", "Job ID");
     for(int i = 0; i <= totalRuntime; i++) {
         printf("%d - %d\n", i, jobs[curr].id);
-        if (i >= jobs[curr].runTime) {
-            curr++;
-        }
     }
     float avgWaitTime = (float) totalWaitTime / 6;
     float avgTat = (float) totalTat / 6;
