@@ -15,6 +15,8 @@ int winnerPos = 0, winner[PLAYERS_THREAD];
 sem_t mutex;
 
 void printCoffee() {
+  printf("Currently available coffee: %d\n", coffee_available);
+  printf("-------------------------------\n");
   for (int i = 0; i < PLAYERS_THREAD; i++) {
     printf("Players %d drinks %d\n", i+1, coffee_drunk[i]);
   }
