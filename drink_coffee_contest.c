@@ -37,6 +37,12 @@ void *player(void *drunkArr) {
 int main() {
   pthread_t players[PLAYERS_THREAD];
   int i;
+  // initialize semaphores
+  sem_init(&mutex, 0, 1);
+  // Get user input on how many coffee available
+  printf("How many coffee available?\n");
+  scanf("%d", &coffee_available);
+  
   for (i = 0; i < PLAYERS_THREAD; i++) {
     coffee_drunk[i] = 0;
     pthread_create(&players[i], NULL, player, &coffee_drunk[i]);
