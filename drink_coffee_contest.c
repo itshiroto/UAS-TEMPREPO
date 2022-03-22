@@ -60,11 +60,11 @@ int main() {
   for(i = 0; i < PLAYERS_THREAD; i++){
     int winner_array[5];
     //search
-    int max = i[0];
+    int max = i;
     for(int j =0; j < PLAYERS_THREAD; j++){
-        if(winner[j] > max){
+        if(coffee_drunk > max){
           winner_array[i] = j;
-          winner[j]=0;
+          coffee_drunk[j]=0;
        }
     }
   }
