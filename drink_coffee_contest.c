@@ -15,8 +15,15 @@
 // The program must be able to print the coffee taken by each thread
 // The program must announce the winner from first to third place
 
-int coffee_available, coffee_taken[PLAYERS_THREAD];
+int coffee_available, coffee_drunk[PLAYERS_THREAD];
 sem_t mutex;
+
+void drink_coffee(int drunk) {
+  sem_wait(&mutex);
+  drunk += 1;
+  coffee_available -= 1;
+  sem_post(&mutex);
+}
 
 int main() {
   pthread_t players[PLAYERS_THREAD];
