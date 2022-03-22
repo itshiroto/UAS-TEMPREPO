@@ -6,6 +6,8 @@ typedef struct {
     int id;
     int arrivalTime;
     int runTime;
+    int turnAroundTime;
+    int waitTime;
 } job;
 
 int main() {
@@ -19,19 +21,30 @@ int main() {
         jobs[i].runTime = runTime[i];
     }
 
-    // Simulate the batch job scheduling using SJF algorithm
-    // based on already existed jobs array and assuming all arrivalTme are sorted
-    // And prints the process using format "time - executed job id"
-    int time = 0;
-    int i = 0;
-    while (i < 6) {
-        if (jobs[i].arrivalTime <= time) {
-            printf("%d - %d\n", time, jobs[i].id);
-            time += jobs[i].runTime;
-            i++;
-        } else {
-            time++;
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            if (jobs[i].runTime > jobs[j].runTime) {
+                job temp = jobs[i];
+                jobs[i] = jobs[j];
+                jobs[j] = temp;
+            }
         }
     }
+    // find wait time
+    jobs[0].waitTime = 0;
+    for (int i = 1; i < 6; i++) {
+        jobs[i].waitTime = jobs[i-1].waitTime + jobs[i-1].runTime;
+    }
+    // find turn around time
+    for (int i = 0; i < 6; i++) {
+        jobs[i].turnAroundTime = jobs[i].waitTime + jobs[i].runTime;
+    }
+    
+    // sort the jobs by burst time
+    
+
+    
+
+
     return 0;
 }
