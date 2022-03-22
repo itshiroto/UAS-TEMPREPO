@@ -35,14 +35,15 @@ int main() {
         printf("%d ", jobs[i].id);
     }
     printf("\n");
-    // find turn around time
-    for (int i = 0; i < 6; i++) {
-        jobs[i].turnAroundTime = jobs[i].waitTime + jobs[i].runTime;
-    }
     // find wait time
     jobs[0].waitTime = 0;
     for (int i = 1; i < 6; i++) {
         jobs[i].waitTime = jobs[i-1].waitTime + jobs[i-1].runTime;
+    }
+
+    // find turn around time
+    for (int i = 0; i < 6; i++) {
+        jobs[i].turnAroundTime = jobs[i].waitTime + jobs[i].runTime;
     }
     
     // find total time it takes to run all jobs
