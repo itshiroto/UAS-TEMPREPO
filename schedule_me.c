@@ -53,21 +53,21 @@ int main() {
         totalWaitTime += jobs[i].waitTime;
         totalRuntime += jobs[i].runTime;
     }
-    printf("%-10s %-10s\n", "Time", "Job ID");
-    
-    int queue[6];
+    job queue[6];
+    queue[0] = jobs[0];
     int queuePos = 1;
+    printf("%-10s %-10s\n", "Time", "Job ID");
+    int curr = 0;
     for(int i = 0; i <= totalRuntime; i++) {
-        int curr = 0;
         printf("%-10d %-10d\n", i, queue[curr].id);
         for (int j = 0; j < 6; j++) {
             if (jobs[j].arrivalTime == i) {
-                queue[queuePos] = j;
+                queue[queuePos] = jobs[j];
                 queuePos++;
             }
         }
         queue[curr].runTime--;
-        if (queue[curr].runTime == 0) {
+        if (queue[curr].runTime == i) {
             curr += 1;
         }
     }
