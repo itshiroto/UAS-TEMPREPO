@@ -58,7 +58,7 @@ int main() {
   
   printf("\nWinners:\n");
   for (i = 0; i < PLAYERS_THREAD; i++) {
-    for(int j = 0; j < PLAYERS_THREAD - i; j++){
+    for(int j = 0; j < PLAYERS_THREAD; j++){
       if (coffee_drunk[j] > coffee_drunk[winnerPos]) {
         winnerPos = j;
       }
