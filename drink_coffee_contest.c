@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <semaphore.h>
 #include <pthread.h>
-#include <sys/types .h>
+#include <sys/types.h>
 #include <unistd.h>
 
 #define MAX_COFFEE 100
