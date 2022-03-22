@@ -25,6 +25,13 @@ void drink_coffee(int drunk) {
   sem_post(&mutex);
 }
 
+void *player(void *drunkArr) {
+  int *drunk = (int *) drunkArr;
+  while (coffee_available < 0) {
+    drink_coffee(drunk);
+  }
+}
+
 int main() {
   pthread_t players[PLAYERS_THREAD];
 
