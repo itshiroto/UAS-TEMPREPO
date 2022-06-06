@@ -30,7 +30,7 @@ typedef struct Node {
 void insertToList(Node **head, int data) {
   Node *newNode = (Node *)malloc(sizeof(Node));
   newNode->data = data;
-  if (head == NULL) {
+  if (*head == NULL) {
     *head = newNode;
   } else {
     Node *curr = *head;
