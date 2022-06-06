@@ -189,6 +189,7 @@ void _menuPengaturan() {
       scanf("%ld%*c", &input);
       ongkirArr[i][j] = input;
       ongkirArr[j][i] = input;
+      printf("\n");
     }
   }
   for (i = 0; i < size; i++) {
