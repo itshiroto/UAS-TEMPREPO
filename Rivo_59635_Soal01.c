@@ -20,6 +20,11 @@
 #define PLATFORM_NAME "linux"
 #endif
 
+typedef struct Kota {
+  char nama[20];
+  int idx;
+} Kota;
+
 void pause() {
   if (strcmp(PLATFORM_NAME, "win")) {
     system("pause");
@@ -52,8 +57,28 @@ long **createMatrix(int row, int col) {
   return matrix;
 }
 
-void readFile(char **kotaArr, long **ongkirArr) {
-  FILE *fp = fopen(PETA_NAME, "r");
+void readFile(Kota *dbKota, long **ongkirArr) {
+  FILE *fpPeta = fopen(PETA_NAME, "r");
+  if (fpPeta == NULL) {
+    printf("File %s tidak ditemukan!\n", PETA_NAME);
+    exit(1);
+  }
+  int i = 0, j = 0;
+  while (fscanf(fpPeta, "%s,%d", dbKota[i].nama, &dbKota[i].idx) != EOF) {
+    i++;
+  }
+
+  FILE *fpOngkir = fopen(ONGKIR_NAME, "r");
+  if (fpOngkir == NULL) {
+    printf("File %s tidak ditemukan!\n", ONGKIR_NAME);
+    exit(1);
+  }
+  ongkirArr = createMatrix(i, i);
+  for (i = 0; i < i; i++) {
+    for (int j = 0; j < i; j++) {
+      fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
+    }
+  }
 }
 
 void _menuSimulasi() {
