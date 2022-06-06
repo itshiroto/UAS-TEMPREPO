@@ -136,7 +136,7 @@ int main() {
   readFile(&dbKota, ongkirArr, &size);
   _printMatrix(ongkirArr, size, size);
   int choice;
-  while (choice != 0) {
+  while (1) {
     choice = _mainMenu();
     switch (choice) {
       case 1:
