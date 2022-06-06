@@ -50,9 +50,12 @@ int _mainMenu() {
 
 long **createMatrix(int row, int col) {
   long **matrix = (long **)malloc(sizeof(long *) * row);
-  int i;
+  int i, j;
   for (i = 0; i < row; i++) {
     matrix[i] = (long *)malloc(sizeof(long) * col);
+    for (j = 0; j < col; j++) {
+      matrix[i][j] = 0;
+    }
   }
   return matrix;
 }
