@@ -35,6 +35,7 @@ typedef struct Node {
 void insertToList(Node **head, int data) {
   Node *newNode = (Node *)malloc(sizeof(Node));
   newNode->data = data;
+  newNode->next = NULL;
   if (*head == NULL) {
     *head = newNode;
   } else {
@@ -53,12 +54,17 @@ int main() {
   for (i = 0; i < 10; i++) {
     bucket[i] = NULL;
   }
-  int jodoh = 0;
+  int jodoh;
   printf("Selamat datang di aplikasi penjodoh bilangan\n");
-  printf(
-      "Silahkan masukkan satuan dari jumlah bilangan yang akan dijodohkan: ");
-  scanf("%d%*c", &jodoh);
-  printf("\n");
+  do {
+    printf(
+        "Silahkan masukkan satuan dari jumlah bilangan yang akan dijodohkan: ");
+    scanf("%d%*c", &jodoh);
+    printf("\n");
+    if (jodoh < 0 || jodoh > 9) {
+      printf("Jumlah bilangan yang dijodohkan harus antara 0-9\n");
+    }
+  } while (jodoh < 0 || jodoh > 9);
   int input = 0;
   i = 0;
   while (input >= 0) {
@@ -80,9 +86,10 @@ int main() {
       curr2 = bucket[j];
       while (curr2 != NULL) {
         if (curr1->data == curr2->data) {
+          curr2 = curr2->next;
           break;
         }
-        printf("Pasangan ke-%d: ", idx);
+        printf("Pasangan ke-%d: ", idx + 1);
         printf("(%d, %d)\n", curr1->data, curr2->data);
         idx++;
         curr2 = curr2->next;
