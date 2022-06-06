@@ -79,14 +79,14 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
     printf("File %s tidak ditemukan!\n", ONGKIR_NAME);
     exit(1);
   }
-  long ongkir[i][i];
   *size = i;
   for (i = 0; i < *size; i++) {
+    *ongkirArr[i] = malloc(sizeof(long) * *size);
     for (j = 0; j < *size; j++) {
-      fscanf(fpOngkir, "%ld", &ongkir[i][j]);
+      *ongkirArr[i][j] = malloc(sizeof(long) * *size);
+      fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
     }
   }
-  *ongkirArr = ongkir;
   fclose(fpOngkir);
 }
 
