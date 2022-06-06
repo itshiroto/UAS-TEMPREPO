@@ -44,7 +44,7 @@ int _mainMenu() {
       "===============================================\n");
   printf("Pilihan: ");
   int choice;
-  scanf("%d", &choice);
+  scanf("%d%*c", &choice);
   return choice;
 }
 
