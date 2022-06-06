@@ -76,7 +76,7 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
     printf("File %s tidak ditemukan!\n", ONGKIR_NAME);
     exit(1);
   }
-  ongkirArr = (long ***)malloc(sizeof(long **) * i);
+  *ongkirArr = (long **)malloc(sizeof(long *) * i * i);
   *size = i;
   for (i = 0; i < *size; i++) {
     for (j = 0; j < *size; j++) {
