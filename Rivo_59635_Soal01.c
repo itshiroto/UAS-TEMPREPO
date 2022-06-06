@@ -74,7 +74,7 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
     printf("File %s tidak ditemukan!\n", ONGKIR_NAME);
     exit(1);
   }
-  ongkirArr = createMatrix(i, i);
+  *ongkirArr = createMatrix(i, i);
   for (i = 0; i < i; i++) {
     for (j = 0; j < i; j++) {
       fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
