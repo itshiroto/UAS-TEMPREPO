@@ -119,6 +119,7 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
     }
     if (asal > size || tujuan > size) {
       printf("Kota tidak ditemukan!\n");
+      pause();
       continue;
     }
     asal--;
