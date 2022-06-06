@@ -208,6 +208,8 @@ int main() {
         _menuSimulasi(dbKota, ongkirArr, size);
         break;
       case 2:
+        _menuPengaturan();
+        readFile(dbKota, ongkirArr, &size);
         break;
       case 0:
         printf("Thanks for using our software!\n");
