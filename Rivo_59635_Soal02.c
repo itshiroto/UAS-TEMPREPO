@@ -42,6 +42,7 @@ void insertToList(Node **head, int data) {
 }
 
 int main() {
+  system(CLEAR);
   Node *bucket[10];
   int i, j;
   for (i = 0; i < 10; i++) {
@@ -83,5 +84,6 @@ int main() {
   }
   printf("\n");
   printf("--------------------------------------\n");
+  pause();
   return 0;
 }
