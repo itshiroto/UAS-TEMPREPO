@@ -58,7 +58,7 @@ int main() {
   i = 0;
   while (input >= 0) {
     printf("Masukkan bilangan ke-%d: ", i + 1);
-    scanf("%d", &input);
+    scanf("%d%*c", &input);
     if (input < 0) {
       break;
     }
