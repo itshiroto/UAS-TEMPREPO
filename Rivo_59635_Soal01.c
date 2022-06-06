@@ -65,7 +65,7 @@ void readFile(Kota *dbKota, long ***ongkirArr, int *size) {
   }
   int i = 0, j = 0;
   char buffer[256];
-  while (fscanf(fpPeta, "%s,%d", dbKota[i]->nama, &(dbKota[i])->idx) != EOF) {
+  while (fscanf(fpPeta, "%s,%d", dbKota[i].nama, &dbKota[i].idx) != EOF) {
     i++;
   }
 
