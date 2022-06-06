@@ -111,9 +111,9 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
       printf("%d. %s\n", dbkota[i].idx + 1, dbkota[i].nama);
     }
     printf("\nPilih kota asal: ");
-    scanf("%d", &asal);
+    scanf("%d%*c", &asal);
     printf("Pilih kota tujuan: ");
-    scanf("%d", &tujuan);
+    scanf("%d%*c", &tujuan);
     if (asal == 0 || tujuan == 0) {
       break;
     }
