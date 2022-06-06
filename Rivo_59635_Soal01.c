@@ -40,6 +40,12 @@ int _mainMenu() {
   return choice;
 }
 
+void _menuSimulasi() {
+  printf(
+      "                   Simulasi Ongkos Kirim\n"
+      "============================================================\n");
+}
+
 int main() {
   int choice = 0;
   while (choice != 0) {
