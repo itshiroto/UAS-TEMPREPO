@@ -37,7 +37,7 @@ void insertToList(Node **head, int data) {
     while (curr->next != NULL) {
       curr = curr->next;
     }
-    curr->next = *newNode;
+    curr->next = newNode;
   }
 }
 
