@@ -1,0 +1,3 @@
+Jakarta,0
+Berau,1
+Putusibau,2
