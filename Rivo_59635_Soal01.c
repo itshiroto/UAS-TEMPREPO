@@ -139,8 +139,11 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
 }
 
 void _menuPengaturan() {
+  system(CLEAR);
   FILE *fpPeta = fopen(PETA_NAME, "w");
   FILE *fpOngkir = fopen(ONGKIR_NAME, "w");
+  printf("                    Pengaturan Ongkos Kirim\n");
+  printf("============================================================\n");
   if (fpPeta != NULL || fpOngkir != NULL) {
     printf(
         "Aplikasi menemukan daftar ongkir yang lama, Apakah anda yakin ingin "
@@ -155,6 +158,9 @@ void _menuPengaturan() {
   }
 
   int size;
+  system(CLEAR);
+  printf("                    Pengaturan Ongkos Kirim\n");
+  printf("============================================================\n");
   printf("Masukkan jumlah kota: ");
   scanf("%d%*c", &size);
   Kota dbkota[size];
