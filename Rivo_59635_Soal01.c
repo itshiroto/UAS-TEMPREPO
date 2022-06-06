@@ -156,6 +156,8 @@ void _menuPengaturan() {
       return;
     }
   }
+  fpPeta = fopen(PETA_NAME, "w");
+  fpOngkir = fopen(ONGKIR_NAME, "w");
 
   int size;
   system(CLEAR);
