@@ -57,6 +57,9 @@ int main() {
   while (input >= 0) {
     printf("Masukkan bilangan ke-%d: ", i + 1);
     scanf("%d", &input);
+    if (input < 0) {
+      break;
+    }
     insertToList(&bucket[input % 10], input);
     i++;
   }
