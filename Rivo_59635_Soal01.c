@@ -172,6 +172,9 @@ void _menuPengaturan() {
     dbkota[i].idx = i;
   }
 
+  system(CLEAR);
+  printf("                    Pengaturan Ongkos Kirim\n");
+  printf("============================================================\n");
   printf("Perhatikan daftar kota di bawah untuk pengisian data selanjutnya!\n");
   _printKota(dbkota, size);
   for (i = 0; i < size; i++) {
