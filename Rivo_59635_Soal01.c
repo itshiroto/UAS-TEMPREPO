@@ -69,8 +69,8 @@ void readFile(Kota dbKota[], long ongkirArr[][100], int *size) {
   int i = 0, j = 0;
   Kota kota;
   int val;
-  while (val = fscanf(fpPeta, "%[^,],%d%*c", kota.nama, &kota.idx) != EOF) {
-    if (val < 2) {
+  while (val = fscanf(fpPeta, "%[^,],%d%*c", kota.nama, &kota.idx)) {
+    if (val < 2 || val != EOF) {
       break;
     }
     dbKota[i] = kota;
