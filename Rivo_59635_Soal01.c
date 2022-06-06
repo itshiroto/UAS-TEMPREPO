@@ -57,7 +57,7 @@ long **createMatrix(int row, int col) {
   return matrix;
 }
 
-void readFile(Kota *dbKota, long **ongkirArr, int *size) {
+void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
   FILE *fpPeta = fopen(PETA_NAME, "r");
   if (fpPeta == NULL) {
     printf("File %s tidak ditemukan!\n", PETA_NAME);
@@ -104,7 +104,7 @@ int main() {
   Kota dbKota[100];
   long **ongkirArr;
   int size;
-  readFile(dbKota, ongkirArr, &size);
+  readFile(&dbKota, &ongkirArr, &size);
   _printMatrix(ongkirArr, size, size);
   int choice = 0;
   while (choice != 0) {
