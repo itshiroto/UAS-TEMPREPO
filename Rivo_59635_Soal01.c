@@ -140,10 +140,8 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
 
 void _menuPengaturan() {
   system(CLEAR);
-  FILE *fpPeta;
-  FILE *fpOngkir;
-  fpPeta = fopen(PETA_NAME, "r");
-  fpOngkir = fopen(ONGKIR_NAME, "r");
+  FILE *fpPeta = fopen(PETA_NAME, "w");
+  FILE *fpOngkir = fopen(ONGKIR_NAME, "w");
   printf("                    Pengaturan Ongkos Kirim\n");
   printf("============================================================\n");
   if (fpPeta != NULL || fpOngkir != NULL) {
@@ -158,10 +156,6 @@ void _menuPengaturan() {
       return;
     }
   }
-  fclose(fpPeta);
-  fclose(fpOngkir);
-  fpPeta = fopen(PETA_NAME, "w");
-  fpOngkir = fopen(ONGKIR_NAME, "w");
 
   int size;
   system(CLEAR);
