@@ -173,9 +173,10 @@ void _menuPengaturan() {
       printf("Kota Asal : %d\n", dbkota[i].idx + 1);
       printf("Kota Tujuan : %d\n", dbkota[j].idx + 1);
       if (i != j) {
-        printf("Ongkos kirim ini akan berlaku untuk perjalanan sebaliknya!");
+        printf("Ongkos kirim ini akan berlaku untuk perjalanan sebaliknya!\n");
       }
       long input;
+      printf("Ongkos Kirim: Rp. ");
       scanf("%ld%*c", &input);
       ongkirArr[i][j] = input;
       ongkirArr[j][i] = input;
