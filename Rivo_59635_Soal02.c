@@ -48,7 +48,7 @@ int main() {
     bucket[i] = NULL;
   }
   int jodoh = 0;
-  printf("Selamat datang di aplikasi penjodoh bilangan");
+  printf("Selamat datang di aplikasi penjodoh bilangan\n");
   printf(
       "Silahkan masukkan satuan dari jumlah bilangan yang akan dijodohkan: \n");
   scanf("%d%*c", &jodoh);
@@ -63,7 +63,7 @@ int main() {
     insertToList(&bucket[input % 10], input);
     i++;
   }
-  printf("Daftar bilangan yang berjodoh sebagai berikut:");
+  printf("Daftar bilangan yang berjodoh sebagai berikut:\n");
   int idx = 0;
   j = jodoh;
   Node *curr1, *curr2;
@@ -73,7 +73,7 @@ int main() {
       curr2 = bucket[j];
       while (curr2 != NULL) {
         printf("Pasangan ke-%d: ", idx);
-        printf("%d, %d\n", curr2->data, curr1->data);
+        printf("%d, %d\n", curr1->data, curr2->data);
         idx++;
         curr2 = curr2->next;
       }
