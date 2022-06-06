@@ -43,7 +43,7 @@ void insertToList(Node **head, int data) {
 
 int main() {
   Node *bucket[10];
-  int i;
+  int i, j;
   for (i = 0; i < 10; i++) {
     bucket[i] = NULL;
   }
@@ -58,5 +58,25 @@ int main() {
     printf("Masukkan bilangan ke-%d: ", i + 1);
     scanf("%d%*c", &input);
     insertToList(&bucket[input % 10], input);
+    i++;
   }
+  printf("Daftar bilangan yang berjodoh sebagai berikut:");
+  int idx = 0;
+  j = jodoh;
+  Node *curr1, *curr2;
+  for (i = 0; i < jodoh; i++) {
+    while (bucket[j] != NULL) {
+      curr1 = bucket[j];
+      while (bucket[i] != NULL) {
+        curr2 = bucket[i];
+        printf("Pasangan ke-%d: ", idx);
+        printf("%d, %d\n", curr2->data, curr1->data);
+        idx++;
+        curr2 = curr2->next;
+      }
+      curr1 = curr1->next;
+    }
+    j--;
+  }
+  return 0;
 }
