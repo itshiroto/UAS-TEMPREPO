@@ -102,7 +102,7 @@ void _menuSimulasi() {
 }
 
 int main() {
-  Kota *dbKota;
+  Kota dbKota[100];
   long **ongkirArr;
   int size;
   readFile(&dbKota, &ongkirArr, &size);
