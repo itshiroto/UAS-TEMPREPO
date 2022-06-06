@@ -60,7 +60,7 @@ long **createMatrix(int row, int col) {
   return matrix;
 }
 
-void readFile(Kota **dbKota, long **ongkirArr, int *size) {
+void readFile(Kota **dbKota, long ongkirArr[][100], int *size) {
   FILE *fpPeta = fopen(PETA_NAME, "r");
   if (fpPeta == NULL) {
     printf("File %s tidak ditemukan!\n", PETA_NAME);
