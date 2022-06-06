@@ -63,7 +63,7 @@ int main() {
     insertToList(&bucket[input % 10], input);
     i++;
   }
-  printf("Daftar bilangan yang berjodoh sebagai berikut:\n");
+  printf("\nDaftar bilangan yang berjodoh sebagai berikut:\n");
   int idx = 0;
   j = jodoh;
   Node *curr1, *curr2;
@@ -73,7 +73,7 @@ int main() {
       curr2 = bucket[j];
       while (curr2 != NULL) {
         printf("Pasangan ke-%d: ", idx);
-        printf("%d, %d\n", curr1->data, curr2->data);
+        printf("(%d, %d)\n", curr1->data, curr2->data);
         idx++;
         curr2 = curr2->next;
       }
