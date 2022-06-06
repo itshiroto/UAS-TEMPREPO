@@ -200,6 +200,8 @@ void _menuPengaturan() {
       fprintf(fpOngkir, "%ld\n", ongkirArr[i][j]);
     }
   }
+  fclose(fpPeta);
+  fclose(fpOngkir);
 }
 
 int main() {
