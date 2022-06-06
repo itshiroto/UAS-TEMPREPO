@@ -51,7 +51,7 @@ int main() {
   int jodoh = 0;
   printf("Selamat datang di aplikasi penjodoh bilangan\n");
   printf(
-      "Silahkan masukkan satuan dari jumlah bilangan yang akan dijodohkan: \n");
+      "Silahkan masukkan satuan dari jumlah bilangan yang akan dijodohkan: ");
   scanf("%d%*c", &jodoh);
   int input = 0;
   i = 0;
