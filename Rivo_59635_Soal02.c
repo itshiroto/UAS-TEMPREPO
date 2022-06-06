@@ -53,6 +53,7 @@ int main() {
   printf(
       "Silahkan masukkan satuan dari jumlah bilangan yang akan dijodohkan: ");
   scanf("%d%*c", &jodoh);
+  printf("\n");
   int input = 0;
   i = 0;
   while (input >= 0) {
