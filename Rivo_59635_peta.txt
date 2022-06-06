@@ -1,0 +1,4 @@
+Jakarta,0
+Bandung,1
+Medan,3
+Palembang,4
