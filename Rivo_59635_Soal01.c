@@ -142,8 +142,8 @@ void _menuPengaturan() {
   system(CLEAR);
   FILE *fpPeta;
   FILE *fpOngkir;
-  *fpPeta = fopen(PETA_NAME, "r");
-  *fpOngkir = fopen(ONGKIR_NAME, "r");
+  fpPeta = fopen(PETA_NAME, "r");
+  fpOngkir = fopen(ONGKIR_NAME, "r");
   printf("                    Pengaturan Ongkos Kirim\n");
   printf("============================================================\n");
   if (fpPeta != NULL || fpOngkir != NULL) {
@@ -160,8 +160,8 @@ void _menuPengaturan() {
   }
   fclose(fpPeta);
   fclose(fpOngkir);
-  *fpPeta = fopen(PETA_NAME, "w");
-  *fpOngkir = fopen(ONGKIR_NAME, "w");
+  fpPeta = fopen(PETA_NAME, "w");
+  fpOngkir = fopen(ONGKIR_NAME, "w");
 
   int size;
   system(CLEAR);
