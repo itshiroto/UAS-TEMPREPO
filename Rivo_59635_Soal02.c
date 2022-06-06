@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+  Nama  : Rivo Juicer Wowor
+  NIM   : 00000059635
+*/
+
 #if defined(_WIN32) || defined(_WIN64)
 #include <conio.h>
 #include <windows.h>
