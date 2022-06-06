@@ -49,7 +49,7 @@ int _mainMenu() {
 }
 
 long **createMatrix(int row, int col) {
-  int **matrix = (int **)malloc(sizeof(int *) * row);
+  long **matrix = (long **)malloc(sizeof(long *) * row);
   int i;
   for (i = 0; i < row; i++) {
     matrix[i] = (int *)malloc(sizeof(int) * col);
