@@ -147,6 +147,7 @@ int main() {
   // _printKota(dbKota, size);
   int choice;
   while (1) {
+    system(CLEAR);
     choice = _mainMenu();
     switch (choice) {
       case 1:
