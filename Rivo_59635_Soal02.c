@@ -74,6 +74,9 @@ int main() {
     while (curr1 != NULL) {
       curr2 = bucket[j];
       while (curr2 != NULL) {
+        if (curr1->data == curr2->data) {
+          break;
+        }
         printf("Pasangan ke-%d: ", idx);
         printf("(%d, %d)\n", curr1->data, curr2->data);
         idx++;
