@@ -43,15 +43,18 @@ int _mainMenu() {
   return choice;
 }
 
-int **createMatrix(int row, int col) {
+long **createMatrix(int row, int col) {
   int **matrix = (int **)malloc(sizeof(int *) * row);
-  for (int i = 0; i < row; i++) {
+  int i;
+  for (i = 0; i < row; i++) {
     matrix[i] = (int *)malloc(sizeof(int) * col);
   }
   return matrix;
 }
 
-int **readFile() {}
+void readFile(char **kotaArr, long **ongkirArr) {
+  FILE *fp = fopen(PETA_NAME, "r");
+}
 
 void _menuSimulasi() {
   printf(
