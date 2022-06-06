@@ -98,6 +98,14 @@ void _printMatrix(long matrix[][100], int row, int col) {
   }
 }
 
+void _printKota(Kota dbkota[], int size) {
+  printf("Daftar Kota : (angka didepan merupakan kode kota)\n");
+  int i;
+  for (i = 0; i < size; i++) {
+    printf("%d. %s\n", dbkota[i].idx + 1, dbkota[i].nama);
+  }
+}
+
 void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
   int asal, tujuan;
   while (1) {
@@ -127,14 +135,6 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
     printf("Ongkos kirim dari %s ke %s: %ld\n", dbkota[asal].nama,
            dbkota[tujuan].nama, ongkirArr[asal][tujuan]);
     pause();
-  }
-}
-
-void _printKota(Kota dbkota[], int size) {
-  printf("Daftar Kota : (angka didepan merupakan kode kota)\n");
-  int i;
-  for (i = 0; i < size; i++) {
-    printf("%d. %s\n", dbkota[i].idx + 1, dbkota[i].nama);
   }
 }
 
