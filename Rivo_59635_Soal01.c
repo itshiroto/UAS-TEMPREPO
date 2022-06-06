@@ -129,6 +129,14 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
   }
 }
 
+void _printKota(Kota dbkota[], int size) {
+  printf("Daftar Kota : (angka didepan merupakan kode kota)\n");
+  int i;
+  for (i = 0; i < size; i++) {
+    printf("%d. %s\n", dbkota[i].idx + 1, dbkota[i].nama);
+  }
+}
+
 int main() {
   Kota *dbKota;
   long ongkirArr[100][100];
