@@ -186,9 +186,8 @@ void _menuPengaturan() {
   }
   for (i = 0; i < size; i++) {
     for (j = 0; j < size; j++) {
-      fprintf(fpOngkir, "%ld ", ongkirArr[i][j]);
+      fprintf(fpOngkir, "%ld\n", ongkirArr[i][j]);
     }
-    fprintf(fpOngkir, "\n");
   }
 }
 
