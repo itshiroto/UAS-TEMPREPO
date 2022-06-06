@@ -101,7 +101,6 @@ void _printMatrix(long matrix[][100], int row, int col) {
 void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
   int asal, tujuan;
   while (1) {
-    system(CLEAR);
     printf(
         "                   Simulasi Ongkos Kirim\n"
         "============================================================\n");
