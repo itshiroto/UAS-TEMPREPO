@@ -108,6 +108,25 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
   for (i = 0; i < size; i++) {
     printf("%d. %s\n", dbkota[i].idx + 1, dbkota[i].nama);
   }
+
+  int asal, tujuan;
+  while (asal != 0 && tujuan != 0) {
+    printf("\nPilih kota asal: ");
+    scanf("%d", &asal);
+    printf("Pilih kota tujuan: ");
+    scanf("%d", &tujuan);
+    if (asal == 0 || tujuan == 0) {
+      break;
+    }
+    if (asal > size || tujuan > size) {
+      printf("Kota tidak ditemukan!\n");
+      continue;
+    }
+    asal--;
+    tujuan--;
+    printf("Ongkos kirim dari %s ke %s: %ld\n", dbkota[asal].nama,
+           dbkota[tujuan].nama, ongkirArr[asal][tujuan]);
+  }
 }
 
 int main() {
