@@ -21,7 +21,7 @@
 #endif
 
 typedef struct Kota {
-  char nama[20];
+  char nama[50];
   int idx;
 } Kota;
 
