@@ -81,6 +81,7 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
   for (i = 0; i < *size; i++) {
     for (j = 0; j < *size; j++) {
       fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
+      printf("%ld ", ongkirArr[i][j]);
     }
   }
   fclose(fpOngkir);
