@@ -52,7 +52,7 @@ long **createMatrix(int row, int col) {
   long **matrix = (long **)malloc(sizeof(long *) * row);
   int i;
   for (i = 0; i < row; i++) {
-    matrix[i] = (int *)malloc(sizeof(int) * col);
+    matrix[i] = (long *)malloc(sizeof(long) * col);
   }
   return matrix;
 }
