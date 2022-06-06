@@ -80,7 +80,7 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
   *size = i;
   for (i = 0; i < *size; i++) {
     for (j = 0; j < *size; j++) {
-      fscanf(fpOngkir, "%ld%*c", &(*ongkirArr)[i][j]);
+      fscanf(fpOngkir, "%ld", &(*ongkirArr)[i][j]);
     }
   }
   fclose(fpOngkir);
