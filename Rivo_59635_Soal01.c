@@ -68,9 +68,9 @@ void readFile(Kota dbKota[], long ongkirArr[][100], int *size) {
   }
   int i = 0, j = 0;
   while (!feof(fpPeta)) {
-    Kota *kota = (Kota *)malloc(sizeof(Kota));
+    Kota kota;
     fscanf(fpPeta, "%[^,],%d", kota->nama, &kota->idx);
-    dbKota[i] = *kota;
+    dbKota[i] = kota;
     i++;
   }
   fclose(fpPeta);
