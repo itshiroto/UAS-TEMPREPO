@@ -70,7 +70,7 @@ void readFile(Kota dbKota[], long ongkirArr[][100], int *size) {
   Kota kota;
   int val;
   while (val = fscanf(fpPeta, "%[^,],%d%*c", kota.nama, &kota.idx)) {
-    if (val < 2 || val != EOF) {
+    if (val < 2 || val == EOF) {
       break;
     }
     dbKota[i] = kota;
