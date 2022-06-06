@@ -99,10 +99,15 @@ void _printMatrix(long matrix[][100], int row, int col) {
   }
 }
 
-void _menuSimulasi() {
+void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
   printf(
       "                   Simulasi Ongkos Kirim\n"
       "============================================================\n");
+  printf("Daftar Kota : (angka didepan merupakan kode kota)\n");
+  int i;
+  for (i = 0; i < size; i++) {
+    printf("%d. %s\n", dbkota[i].idx + 1, dbkota[i].nama);
+  }
 }
 
 int main() {
