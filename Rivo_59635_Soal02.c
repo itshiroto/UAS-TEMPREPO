@@ -67,10 +67,10 @@ int main() {
   int idx = 0;
   j = jodoh;
   Node *curr1, *curr2;
+  curr1 = bucket[j];
+  curr2 = bucket[i];
   for (i = 0; i < jodoh; i++) {
-    curr1 = bucket[j];
     while (curr1 != NULL) {
-      curr2 = bucket[i];
       while (curr2 != NULL) {
         printf("Pasangan ke-%d: ", idx);
         printf("%d, %d\n", curr2->data, curr1->data);
