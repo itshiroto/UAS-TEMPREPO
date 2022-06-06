@@ -101,6 +101,11 @@ void _menuSimulasi() {
 }
 
 int main() {
+  Kota dbKota[100];
+  long **ongkirArr;
+  int size;
+  readFile(dbKota, ongkirArr, &size);
+  _printMatrix(ongkirArr, size, size);
   int choice = 0;
   while (choice != 0) {
     choice = _mainMenu();
