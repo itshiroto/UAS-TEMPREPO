@@ -78,8 +78,10 @@ int main() {
           printf("Pasangan ke-%d: ", idx);
           printf("(%d, %d)\n", curr1->data, curr2->data);
           idx++;
+          curr2 = curr2->next;
+        } else {
+          break;
         }
-        curr2 = curr2->next;
       }
       curr1 = curr1->next;
     }
