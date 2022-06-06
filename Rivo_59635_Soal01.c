@@ -89,7 +89,7 @@ void readFile(Kota **dbKota, long ongkirArr[][100], int *size) {
   fclose(fpOngkir);
 }
 
-void _printMatrix(long **matrix, int row, int col) {
+void _printMatrix(long matrix[][100], int row, int col) {
   int i, j;
   for (i = 0; i < row; i++) {
     for (j = 0; j < col; j++) {
