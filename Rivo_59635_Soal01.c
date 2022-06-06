@@ -79,7 +79,7 @@ void readFile(Kota **dbKota, long **ongkirArr, int *size) {
     printf("File %s tidak ditemukan!\n", ONGKIR_NAME);
     exit(1);
   }
-  ongkirArr = createMatrix(i, i);
+  // ongkirArr = createMatrix(i, i);
   *size = i;
   for (i = 0; i < *size; i++) {
     for (j = 0; j < *size; j++) {
@@ -107,7 +107,7 @@ void _menuSimulasi() {
 
 int main() {
   Kota *dbKota;
-  long **ongkirArr;
+  long ongkirArr[100][100];
   int size;
   readFile(&dbKota, ongkirArr, &size);
   _printMatrix(ongkirArr, size, size);
