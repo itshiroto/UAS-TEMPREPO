@@ -83,7 +83,7 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
   for (i = 0; i < *size; i++) {
     *ongkirArr[i] = (long **)malloc(sizeof(long *) * *size);
     for (j = 0; j < *size; j++) {
-      *ongkirArr[i][j] = malloc(sizeof(long) * *size);
+      *ongkirArr[i][j] = (long *)malloc(sizeof(long) * *size);
       fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
     }
   }
