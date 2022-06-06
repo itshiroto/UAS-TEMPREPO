@@ -110,7 +110,7 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
   }
 
   int asal, tujuan;
-  while (asal != 0 && tujuan != 0) {
+  while (1) {
     printf("\nPilih kota asal: ");
     scanf("%d", &asal);
     printf("Pilih kota tujuan: ");
