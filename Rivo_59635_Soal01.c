@@ -57,7 +57,7 @@ long **createMatrix(int row, int col) {
   return matrix;
 }
 
-void readFile(Kota *dbKota, long **ongkirArr) {
+void readFile(Kota *dbKota, long **ongkirArr, int *size) {
   FILE *fpPeta = fopen(PETA_NAME, "r");
   if (fpPeta == NULL) {
     printf("File %s tidak ditemukan!\n", PETA_NAME);
@@ -68,6 +68,7 @@ void readFile(Kota *dbKota, long **ongkirArr) {
     i++;
   }
 
+  fclose(fpPeta);
   FILE *fpOngkir = fopen(ONGKIR_NAME, "r");
   if (fpOngkir == NULL) {
     printf("File %s tidak ditemukan!\n", ONGKIR_NAME);
@@ -78,6 +79,17 @@ void readFile(Kota *dbKota, long **ongkirArr) {
     for (j = 0; j < i; j++) {
       fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
     }
+  }
+  fclose(fpOngkir);
+}
+
+void _printMatrix(long **matrix, int row, int col) {
+  int i, j;
+  for (i = 0; i < row; i++) {
+    for (j = 0; j < col; j++) {
+      printf("%ld ", matrix[i][j]);
+    }
+    printf("\n");
   }
 }
 
