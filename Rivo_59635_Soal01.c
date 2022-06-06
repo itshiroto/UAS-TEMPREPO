@@ -81,7 +81,7 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
   i = 0;
   while (!feof(fpOngkir)) {
     fscanf(fpOngkir, "%d", &(*ongkirArr)[i][j]);
-    if (j < 4) {
+    if (j < *size) {
       j++;
     } else {
       i++;
