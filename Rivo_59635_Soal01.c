@@ -154,7 +154,7 @@ int main() {
         break;
       case 0:
         printf("Thanks for using our software!\n");
-        break;
+        return 0;
       default:
         printf("Pilihan tidak ditemukan!\n");
         break;
