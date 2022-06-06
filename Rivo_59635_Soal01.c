@@ -77,8 +77,9 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
     exit(1);
   }
   *ongkirArr = createMatrix(i, i);
-  for (i = 0; i < i; i++) {
-    for (j = 0; j < i; j++) {
+  int size = i;
+  for (i = 0; i < size; i++) {
+    for (j = 0; j < size; j++) {
       fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
     }
   }
