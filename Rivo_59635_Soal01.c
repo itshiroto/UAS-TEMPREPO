@@ -78,12 +78,14 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
   }
   *ongkirArr = createMatrix(i, i);
   *size = i;
-  for (i = 0; i < *size; i++) {
-    for (j = 0; j < *size; j++) {
-      fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
-      printf("%ld ", ongkirArr[i][j]);
+  while (!feof(fpOngkir)) {
+    fscanf(fpOngkir, "%d", &(*ongkirArr)[i][j]);
+    if (j < i - 1) {
+      j++;
+    } else {
+      i++;
+      j = 0;
     }
-    printf("\n");
   }
   fclose(fpOngkir);
 }
