@@ -57,7 +57,7 @@ long **createMatrix(int row, int col) {
   return matrix;
 }
 
-void readFile(Kota *dbKota, long ***ongkirArr, int *size) {
+void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
   FILE *fpPeta = fopen(PETA_NAME, "r");
   if (fpPeta == NULL) {
     printf("File %s tidak ditemukan!\n", PETA_NAME);
@@ -65,7 +65,9 @@ void readFile(Kota *dbKota, long ***ongkirArr, int *size) {
   }
   int i = 0, j = 0;
   while (!feof(fpPeta)) {
-    fscanf(fpPeta, "%s,%d", dbKota[i].nama, dbKota[i].idx);
+    Kota *kota = (Kota *)malloc(sizeof(Kota));
+    fscanf(fpPeta, "%s,%d", kota->nama, kota->idx);
+    dbKota[i] = kota;
     i++;
   }
   fclose(fpPeta);
@@ -101,10 +103,10 @@ void _menuSimulasi() {
 }
 
 int main() {
-  Kota dbKota[100];
+  Kota *dbKota;
   long **ongkirArr;
   int size;
-  readFile(dbKota, &ongkirArr, &size);
+  readFile(&dbKota, &ongkirArr, &size);
   _printMatrix(ongkirArr, size, size);
   int choice = 0;
   while (choice != 0) {
