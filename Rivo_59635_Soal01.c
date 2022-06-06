@@ -26,7 +26,7 @@ typedef struct Kota {
 } Kota;
 
 void pause() {
-  if (strcmp(PLATFORM_NAME, "win")) {
+  if (strcmp("win", PLATFORM_NAME) == 0) {
     system("pause");
   } else {
     printf("Press any key to continue...");
