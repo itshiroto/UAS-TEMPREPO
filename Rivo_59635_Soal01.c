@@ -7,6 +7,9 @@
   NIM   : 00000059635
 */
 
+#define PETA_NAME "Rivo_59635_peta.txt"
+#define ONGKIR_NAME "Rivo_59635_ongkir.txt"
+
 #if defined(_WIN32) || defined(_WIN64)
 #include <conio.h>
 #include <windows.h>
@@ -39,6 +42,16 @@ int _mainMenu() {
   scanf("%d", &choice);
   return choice;
 }
+
+int **createMatrix(int row, int col) {
+  int **matrix = (int **)malloc(sizeof(int *) * row);
+  for (int i = 0; i < row; i++) {
+    matrix[i] = (int *)malloc(sizeof(int) * col);
+  }
+  return matrix;
+}
+
+int **readFile() {}
 
 void _menuSimulasi() {
   printf(
