@@ -170,13 +170,25 @@ void _menuPengaturan() {
   _printKota(dbkota, size);
   for (i = 0; i < size; i++) {
     for (j = i; j < size; j++) {
-      printf("Masukkan ongkos kirim dari %s ke %s: ", dbkota[i].nama,
-             dbkota[j].nama);
+      printf("Kota Asal : %d\n", dbkota[i].idx + 1);
+      printf("Kota Tujuan : %d\n", dbkota[j].idx + 1);
+      if (i != j) {
+        printf("Ongkos kirim ini akan berlaku untuk perjalanan sebaliknya!");
+      }
       long input;
       scanf("%ld%*c", &input);
       ongkirArr[i][j] = input;
       ongkirArr[j][i] = input;
     }
+  }
+  for (i = 0; i < size; i++) {
+    fprintf(fpPeta, "%s,%d\n", dbkota[i].nama, dbkota[i].idx);
+  }
+  for (i = 0; i < size; i++) {
+    for (j = 0; j < size; j++) {
+      fprintf(fpOngkir, "%ld ", ongkirArr[i][j]);
+    }
+    fprintf(fpOngkir, "\n");
   }
 }
 
