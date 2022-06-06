@@ -140,6 +140,7 @@ int main() {
     choice = _mainMenu();
     switch (choice) {
       case 1:
+        _menuSimulasi(dbKota, ongkirArr, size);
         break;
       case 2:
         break;
