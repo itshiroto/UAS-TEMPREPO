@@ -141,8 +141,8 @@ int main() {
   long ongkirArr[100][100];
   int size;
   readFile(dbKota, ongkirArr, &size);
-  _printMatrix(ongkirArr, size, size);
-  _printKota(dbKota, size);
+  // _printMatrix(ongkirArr, size, size);
+  // _printKota(dbKota, size);
   int choice;
   while (1) {
     choice = _mainMenu();
