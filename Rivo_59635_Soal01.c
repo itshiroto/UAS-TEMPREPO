@@ -81,7 +81,7 @@ void readFile(Kota **dbKota, long ***ongkirArr, int *size) {
   }
   *size = i;
   for (i = 0; i < *size; i++) {
-    *ongkirArr[i] = malloc(sizeof(long) * *size);
+    *ongkirArr[i] = (long **)malloc(sizeof(long *) * *size);
     for (j = 0; j < *size; j++) {
       *ongkirArr[i][j] = malloc(sizeof(long) * *size);
       fscanf(fpOngkir, "%ld", &ongkirArr[i][j]);
