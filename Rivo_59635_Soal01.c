@@ -64,11 +64,10 @@ void readFile(Kota *dbKota, long ***ongkirArr, int *size) {
     exit(1);
   }
   int i = 0, j = 0;
-  char buffer[256];
-  while (fscanf(fpPeta, "%s,%d", dbKota[i].nama, &dbKota[i].idx) != EOF) {
+  while (!feof(fpPeta)) {
+    fscanf(fpPeta, "%s,%d", dbKota[i].nama, dbKota[i].idx);
     i++;
   }
-
   fclose(fpPeta);
   FILE *fpOngkir = fopen(ONGKIR_NAME, "r");
   if (fpOngkir == NULL) {
