@@ -69,7 +69,7 @@ int main() {
   int idx = 0;
   j = jodoh;
   Node *curr1, *curr2;
-  for (i = 0; i < jodoh / 2; i++) {
+  for (i = 0; i < (jodoh / 2) + 1; i++) {
     curr1 = bucket[i];
     while (curr1 != NULL) {
       curr2 = bucket[j];
