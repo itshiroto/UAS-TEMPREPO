@@ -138,6 +138,48 @@ void _menuSimulasi(Kota dbkota[], long ongkirArr[][100], int size) {
   }
 }
 
+void _menuPengaturan() {
+  FILE *fpPeta = fopen(PETA_NAME, "w");
+  FILE *fpOngkir = fopen(ONGKIR_NAME, "w");
+  if (fpPeta != NULL || fpOngkir != NULL) {
+    printf(
+        "Aplikasi menemukan daftar ongkir yang lama, Apakah anda yakin ingin "
+        "menghapus data lama? (Y/N)\n");
+    char choice;
+    scanf("%c%*c", &choice);
+    if (choice == 'N' || choice == 'n') {
+      fclose(fpPeta);
+      fclose(fpOngkir);
+      return;
+    }
+  }
+
+  int size;
+  printf("Masukkan jumlah kota: ");
+  scanf("%d%*c", &size);
+  Kota dbkota[size];
+  long ongkirArr[size][size];
+  int i, j;
+  for (i = 0; i < size; i++) {
+    printf("Masukkan nama kota %d: ", i + 1);
+    scanf("%[^\n]%*c", dbkota[i].nama);
+    dbkota[i].idx = i;
+  }
+
+  printf("Perhatikan daftar kota di bawah untuk pengisian data selanjutnya!\n");
+  _printKota(dbkota, size);
+  for (i = 0; i < size; i++) {
+    for (j = i; j < size; j++) {
+      printf("Masukkan ongkos kirim dari %s ke %s: ", dbkota[i].nama,
+             dbkota[j].nama);
+      long input;
+      scanf("%ld%*c", &input);
+      ongkirArr[i][j] = input;
+      ongkirArr[j][i] = input;
+    }
+  }
+}
+
 int main() {
   Kota dbKota[100];
   long ongkirArr[100][100];
