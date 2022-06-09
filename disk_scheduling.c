@@ -80,7 +80,7 @@ void disk_CSCAN(dev_req input) {
   for (i = 0; i < leftSize; i++) {
     printf("%d ", left[i]);
   }
-  printf("\n%d\n", seekTime);
+  printf("\nSeek time: %d\n", seekTime);
   free(left);
   free(right);
 }
