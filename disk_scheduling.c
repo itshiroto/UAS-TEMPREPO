@@ -47,14 +47,12 @@ void disk_CSCAN(dev_req input) {
   int head = input.head;
   int *left, *right;
   int leftSize = 0, rightSize = 0;
+  int seekTime = 0;
 
   CSCAN_init(input, &left, &right, &leftSize, &rightSize);
   disk_sort(left, leftSize, 1);
   disk_sort(right, rightSize, 1);
 
-  int seekTime = 0;
-
-  // Use CSCAN Algorithm to find seektime
   i = 0;
   for (i = 0; i < rightSize; i++) {
     seekTime += abs(head - right[i]);
