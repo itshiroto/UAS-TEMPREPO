@@ -44,7 +44,6 @@ void disk_sort(int *arr, int size, int direction) {
 
 void disk_CSCAN(dev_req input) {
   int i;
-  int seq[MAX_DISK_SIZE];
   int head = input.head;
   int *left, *right;
   int leftSize = 0, rightSize = 0;
@@ -52,8 +51,6 @@ void disk_CSCAN(dev_req input) {
   CSCAN_init(input, &left, &right, &leftSize, &rightSize);
   disk_sort(left, leftSize, 1);
   disk_sort(right, rightSize, 1);
-  memcpy(seq, right, sizeof(int) * rightSize);
-  memcpy(seq + rightSize, left, sizeof(int) * leftSize);
 
   int seekTime = 0;
 
@@ -74,8 +71,14 @@ void disk_CSCAN(dev_req input) {
   }
   printf("CSCAN Atas\n");
   printf("%d", input.head);
-  for (i = 0; i < input.size; i++) {
-    printf("%d ", seq[i]);
+  for (i = 0; i < rightSize; i++) {
+    printf("%d ", right[i]);
+  }
+  printf("%d ", MAX_DISK_SIZE);
+  i = 0;
+  printf("0 ");
+  for (i = 0; i < leftSize; i++) {
+    printf("%d ", left[i]);
   }
   printf("\n%d\n", seekTime);
   free(left);
