@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_DISK_SIZE 300
+#define MAX_DISK_SIZE 300 - 1
 #define MAX_REQ 10
 
 typedef struct dev_req {
