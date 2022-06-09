@@ -50,8 +50,8 @@ void disk_CSCAN(dev_req input) {
   int leftSize = 0, rightSize = 0;
 
   CSCAN_init(input, &left, &right, &leftSize, &rightSize);
-  disk_sort(left, leftSize, 0);
-  disk_sort(right, rightSize, 0);
+  disk_sort(left, leftSize, 1);
+  disk_sort(right, rightSize, 1);
   memcpy(seq, right, sizeof(int) * rightSize);
   memcpy(seq + rightSize, left, sizeof(int) * leftSize);
 
