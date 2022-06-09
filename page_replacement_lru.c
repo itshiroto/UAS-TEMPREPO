@@ -78,9 +78,9 @@ void printQueue(Node *head) {
 
 int main() {
   Node *head = NULL;
-  int buffer, count = 0;
-  printf("Enter the number of references: \n");
-  while (true) {
+  int buffer, count = 0, i = 0;
+  while (i < MAX_REF) {
+    printf("Enter reference (%i/20): ");
     scanf("%d", &buffer);
     if (buffer == -1) {
       break;
@@ -99,6 +99,7 @@ int main() {
         insertNode(&head, buffer);
       }
     }
+    i++;
   }
   printQueue(head);
 }
