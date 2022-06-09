@@ -59,17 +59,18 @@ void disk_CSCAN(dev_req input) {
 
   // Use CSCAN Algorithm to find seektime
   i = 0;
+  for (i = 0; i < rightSize; i++) {
+    seekTime += abs(head - right[i]);
+    head = right[i];
+  }
+
+  seekTime += abs(MAX_DISK_SIZE - right[leftSize]);
+  seekTime += MAX_DISK_SIZE;
+  head = 0;
 
   for (i = 0; i < leftSize; i++) {
     seekTime += abs(head - left[i]);
     head = left[i];
-  }
-  seekTime += abs(MAX_DISK_SIZE - left[leftSize]);
-  seekTime += MAX_DISK_SIZE;
-  head = MAX_DISK_SIZE;
-  for (i = 0; i < rightSize; i++) {
-    seekTime += abs(head - right[i]);
-    head = right[i];
   }
   printf("SCAN Bawah\n");
   for (i = 0; i < input.size; i++) {
