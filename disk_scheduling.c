@@ -73,6 +73,7 @@ void disk_CSCAN(dev_req input) {
     head = left[i];
   }
   printf("CSCAN Atas\n");
+  printf("%d", input.head);
   for (i = 0; i < input.size; i++) {
     printf("%d ", seq[i]);
   }
