@@ -130,7 +130,7 @@ int main() {
   int i;
   int buffer;
   for (i = 0; i < MAX_REQ; i++) {
-    printf("Masukkan request %d (isi -1 jika selesai): ", i + 1);
+    printf("Request[%d/%d] (isi -1 jika selesai): ", i + 1, MAX_REQ);
     scanf("%d", &buffer);
     if (buffer < 0) {
       break;
