@@ -52,8 +52,8 @@ void disk_CSCAN(dev_req input) {
   CSCAN_init(input, &left, &right, &leftSize, &rightSize);
   disk_sort(left, leftSize, 0);
   disk_sort(right, rightSize, 0);
-  memcpy(seq, left, sizeof(int) * leftSize);
-  memcpy(seq + leftSize, right, sizeof(int) * rightSize);
+  memcpy(seq, right, sizeof(int) * rightSize);
+  memcpy(seq + rightSize, left, sizeof(int) * leftSize);
 
   int seekTime = 0;
 
