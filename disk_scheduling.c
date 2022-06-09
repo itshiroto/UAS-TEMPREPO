@@ -28,11 +28,32 @@ void CSCAN_init(dev_req in, int **left, int **right, int *leftSize,
   *right = (int *)realloc((*right), sizeof(**right) * (*rightSize));
 }
 
-void disk_CSCAN(int arr[], int head, int arrSize) {
-  int seekCnt = 0;
+void disk_sort(int *arr, int size, int direction) {
+  int i, j;
+  for (i = 0; i < size; i++) {
+    for (j = i + 1; j < size; j++) {
+      if (direction ? arr[i] > arr[j] : arr[i] < arr[j]) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+}
+
+void disk_CSCAN(dev_req input) {
+  int i;
+  int seq[MAX_DISK_SIZE];
+  int head = input.head;
   int distance, currTrack;
-  int left[MAX_DISK_SIZE];
-  int right[MAX_DISK_SIZE];
+  int *left, *right;
+  int leftSize = 0, rightSize = 0;
+
+  CSCAN_init(input, &left, &right, &leftSize, &rightSize);
+  disk_sort(left, leftSize, 0);
+  disk_sort(right, rightSize, 1);
+  memcpy(seq, left, sizeof(int) * leftSize);
+  memcpy(seq + leftSize, right, sizeof(int) * rightSize);
 }
 
 int main() {
