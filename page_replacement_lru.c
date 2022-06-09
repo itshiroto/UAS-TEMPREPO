@@ -62,8 +62,8 @@ bool checkIfExists(Node *head, int data) {
 void printQueue(Node *head) {
   Node *curr = head;
   int count = MAX_FRAME;
-  printf("PF: %d\n", pageFault);
-  printf("PN\tR\n");
+  printf("Page Fault: %d\n", pageFault);
+  printf("Page Number\n");
   while (curr != NULL) {
     printf("%d\n", curr->data);
     curr = curr->next;
