@@ -1,1 +1,7 @@
-{}
+{
+  "files.associations": {
+    "*.excalidraw": "json",
+    "*.excalidrawlib": "json",
+    "stdlib.h": "c"
+  }
+}
