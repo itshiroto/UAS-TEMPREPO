@@ -65,7 +65,6 @@ void disk_CSCAN(dev_req input) {
   }
 
   seekTime += abs(MAX_DISK_SIZE - right[rightSize]);
-  seekTime += MAX_DISK_SIZE;
   head = 0;
 
   for (i = 0; i < leftSize; i++) {
