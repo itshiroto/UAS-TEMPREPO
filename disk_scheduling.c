@@ -104,6 +104,17 @@ void disk_LOOK(dev_req input) {
     seekTime += abs(head - left[i]);
     head = left[i];
   }
+
+  printf("LOOK Atas\n");
+  printf("%d ", input.head);
+  for (i = 0; i < rightSize; i++) {
+    printf("%d ", right[i]);
+  }
+  printf("%d ", MAX_DISK_SIZE);
+  i = 0;
+  for (i = 0; i < leftSize; i++) {
+    printf("%d ", left[i]);
+  }
 }
 
 int main() {
