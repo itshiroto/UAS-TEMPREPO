@@ -80,7 +80,7 @@ int main() {
   Node *head = NULL;
   int buffer, count = 0, i = 0;
   while (i < MAX_REF) {
-    printf("Enter reference (%i/20): ", i + 1);
+    printf("Enter reference (%i/%i): ", i + 1, MAX_REF);
     scanf("%d", &buffer);
     if (buffer == -1) {
       break;
