@@ -121,8 +121,24 @@ void disk_LOOK(dev_req input) {
 }
 
 int main() {
-  dev_req input = {
-      .req = {176, 79, 34, 60, 92, 11, 41, 114}, .head = 50, .size = 8};
+  // dev_req input = {
+  //     .req = {176, 79, 34, 60, 92, 11, 41, 114}, .head = 50, .size = 8};
+  dev_req input;
+  input.size = 0;
+
+  printf("Masukkan head: ");
+  scanf("%d", &input.head);
+  int i;
+  int buffer;
+  for (i = 0; i < MAX_REQ; i++) {
+    printf("Masukkan request %d: ", i + 1);
+    scanf("%d", &buffer);
+    if (buffer < 0) {
+      break;
+    }
+    input.req[i] = buffer;
+    input.size++;
+  }
 
   disk_CSCAN(input);
   printf("\n");
