@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX_FRAME 4
+#define MAX_REF 20
+
 typedef struct Node {
   int data;
   struct Node *next;
@@ -54,4 +57,21 @@ bool checkIfExists(Node *head, int data) {
     temp = temp->next;
   }
   return false;
+}
+
+void printQueue(Node *head) {
+  Node *curr = head;
+  int count = MAX_FRAME;
+  printf("PF: %d\n", pageFault);
+  printf("PN\tR\n");
+  while (curr != NULL) {
+    printf("%d\n", curr->data);
+    curr = curr->next;
+    count--;
+  }
+  int i;
+  for (i = 0; i < count; i++) {
+    printf("X\tX\n");
+  }
+  printf("\n");
 }
