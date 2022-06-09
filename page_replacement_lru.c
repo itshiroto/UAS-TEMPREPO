@@ -100,4 +100,5 @@ int main() {
       }
     }
   }
+  printQueue(head);
 }
