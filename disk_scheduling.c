@@ -11,8 +11,8 @@ typedef struct dev_req {
   int size;
 } dev_req;
 
-void CSCAN_init(dev_req in, int **left, int **right, int *leftSize,
-                int *rightSize) {
+void disk_init(dev_req in, int **left, int **right, int *leftSize,
+               int *rightSize) {
   *left = malloc(sizeof(**left) * in.size);
   *right = malloc(sizeof(**right) * in.size);
   int i;
@@ -49,7 +49,7 @@ void disk_CSCAN(dev_req input) {
   int leftSize = 0, rightSize = 0;
   int seekTime = 0;
 
-  CSCAN_init(input, &left, &right, &leftSize, &rightSize);
+  disk_init(input, &left, &right, &leftSize, &rightSize);
   disk_sort(left, leftSize, 1);
   disk_sort(right, rightSize, 1);
 
@@ -81,6 +81,29 @@ void disk_CSCAN(dev_req input) {
   printf("\nSeek time: %d\n", seekTime);
   free(left);
   free(right);
+}
+
+void disk_LOOK(dev_req input) {
+  int i;
+  int head = input.head;
+  int *left, *right;
+  int leftSize = 0, rightSize = 0;
+  int seekTime = 0;
+
+  disk_init(input, &left, &right, &leftSize, &rightSize);
+  disk_sort(left, leftSize, 1);
+  disk_sort(right, rightSize, 0);
+
+  i = 0;
+  for (i = 0; i < rightSize; i++) {
+    seekTime += abs(head - right[i]);
+    head = right[i];
+  }
+
+  for (i = 0; i < leftSize; i++) {
+    seekTime += abs(head - left[i]);
+    head = left[i];
+  }
 }
 
 int main() {
