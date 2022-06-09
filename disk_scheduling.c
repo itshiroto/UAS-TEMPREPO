@@ -115,6 +115,9 @@ void disk_LOOK(dev_req input) {
   for (i = 0; i < leftSize; i++) {
     printf("%d ", left[i]);
   }
+  printf("\nSeek time: %d\n", seekTime);
+  free(left);
+  free(right);
 }
 
 int main() {
