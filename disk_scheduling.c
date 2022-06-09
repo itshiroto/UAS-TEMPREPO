@@ -5,7 +5,7 @@
 #define MAX_REQ 10
 
 typedef struct dev_req {
-  int *req;
+  int req[MAX_REQ];
   int head;
   int size;
 } dev_req;
@@ -28,7 +28,7 @@ void CSCAN_init(dev_req in, int **left, int **right, int *leftSize,
   *right = (int *)realloc((*right), sizeof(**right) * (*rightSize));
 }
 
-void disk_sort(int *arr, int size, direction) {
+void disk_sort(int *arr, int size, int direction) {
   int i, j;
   for (i = 0; i < size; i++) {
     for (j = i + 1; j < size; j++) {
@@ -60,13 +60,30 @@ void disk_CSCAN(dev_req input) {
   i = 0;
 
   for (i = 0; i < leftSize; i++) {
-    if (i == leftSize) {
-      break;
-    }
+    seekTime += abs(head - left[i]);
+    head = left[i];
   }
+  seekTime += abs(MAX_DISK_SIZE - left[leftSize]);
+  seekTime += MAX_DISK_SIZE;
+  head = MAX_DISK_SIZE;
+  for (i = 0; i < rightSize; i++) {
+    seekTime += abs(head - right[i]);
+    head = right[i];
+  }
+  printf("SCAN Bawah\n");
+  for (i = 0; i < input.size; i++) {
+    printf("%d ", seq[i]);
+  }
+  printf("\n%d\n", seekTime);
+  free(left);
+  free(right);
 }
 
 int main() {
   printf("Hello Lab!\n");
+  dev_req input = {
+      .req = {176, 79, 34, 60, 92, 11, 41, 114}, .head = 50, .size = 8};
+
+  disk_CSCAN(input);
   return 0;
 }
