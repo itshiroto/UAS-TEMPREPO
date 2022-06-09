@@ -79,6 +79,7 @@ void printQueue(Node *head) {
 int main() {
   Node *head = NULL;
   int buffer, count = 0;
+  printf("Enter the number of references: \n");
   while (true) {
     scanf("%d", &buffer);
     if (buffer == -1) {
