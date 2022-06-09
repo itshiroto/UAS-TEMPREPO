@@ -75,3 +75,28 @@ void printQueue(Node *head) {
   }
   printf("\n");
 }
+
+int main() {
+  Node *head = NULL;
+  int buffer, count = 0;
+  while (true) {
+    scanf("%d", &buffer);
+    if (buffer == -1) {
+      break;
+    }
+    if (checkIfExists(head, buffer)) {
+      removeNode(&head, buffer);
+      insertNode(&head, buffer);
+    } else {
+      if (count < MAX_FRAME) {
+        insertNode(&head, buffer);
+        count++;
+        pageFault++;
+      } else {
+        pageFault++;
+        removeNode(&head, head->data);
+        insertNode(&head, buffer);
+      }
+    }
+  }
+}
