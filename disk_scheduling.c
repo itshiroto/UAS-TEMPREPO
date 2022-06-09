@@ -131,7 +131,7 @@ int main() {
   int i;
   int buffer;
   for (i = 0; i < MAX_REQ; i++) {
-    printf("Masukkan request %d: ", i + 1);
+    printf("Masukkan request %d (isi -1 jika selesai): ", i + 1);
     scanf("%d", &buffer);
     if (buffer < 0) {
       break;
