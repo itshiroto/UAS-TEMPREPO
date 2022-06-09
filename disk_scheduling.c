@@ -91,8 +91,8 @@ void disk_LOOK(dev_req input) {
   int seekTime = 0;
 
   disk_init(input, &left, &right, &leftSize, &rightSize);
-  disk_sort(left, leftSize, 1);
-  disk_sort(right, rightSize, 0);
+  disk_sort(left, leftSize, 0);
+  disk_sort(right, rightSize, 1);
 
   i = 0;
   for (i = 0; i < rightSize; i++) {
