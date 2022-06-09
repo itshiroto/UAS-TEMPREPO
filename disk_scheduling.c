@@ -72,7 +72,7 @@ void disk_CSCAN(dev_req input) {
     seekTime += abs(head - left[i]);
     head = left[i];
   }
-  printf("SCAN Bawah\n");
+  printf("CSCAN Atas\n");
   for (i = 0; i < input.size; i++) {
     printf("%d ", seq[i]);
   }
