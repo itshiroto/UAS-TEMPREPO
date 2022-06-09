@@ -79,8 +79,10 @@ void printQueue(Node *head) {
 int main() {
   Node *head = NULL;
   int buffer, count = 0, i = 0;
+
+  printf("Masukkan page reference (isi -1 jika selesai)\n");
   while (i < MAX_REF) {
-    printf("Enter reference (%i/%i): ", i + 1, MAX_REF);
+    printf("Reference (%i/%i): ", i + 1, MAX_REF);
     scanf("%d", &buffer);
     if (buffer < 0) {
       break;
