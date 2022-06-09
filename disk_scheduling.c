@@ -139,6 +139,7 @@ int main() {
     input.req[i] = buffer;
     input.size++;
   }
+  printf("\n");
 
   disk_CSCAN(input);
   printf("\n");
